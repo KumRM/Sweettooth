@@ -20,30 +20,37 @@ function toggle()
 #subCategoryTable
 {
 display: none;
-max-width: 600px;
+max-width: 400px;
 }
 </style>
-<div ng-app="app" ng-controller="myCtrl" align="center">
+<div align="center">
+<h1>
+<p style="font-size: x-large;">SUB-CATEGORY REGISTRATION FORM</p>
+</h1>
+</div>
+<div ng-app="app" id="contain" ng-controller="myCtrl" align="center">
+<div class="signup" align="center">
 <form:form modelAttribute="subCategory" action="addSubCategory">
 <form:input type="hidden" path="subCategoryId"/>
 <form:input path="subCategoryName" placeholder="Enter Sub-Category Name"/>
-<form:errors path="subCategoryName" /><br>
+<form:errors path="subCategoryName"></form:errors><br>
 <form:input path="subCategoryDescription" placeholder="Enter Sub-Category Description"/>
 <form:errors path="subCategoryDescription"/><br>
 <form:select path="category.categoryName" items="${categoryList}" itemValue="categoryName" itemLabel="categoryName" />
-<c:if test="${!empty subCategory.subCategoryDescription}">
-<input type="submit" value="Edit Sub Category"/>
+<c:if test="${!empty subCategory.subCategoryName && !empty subCategory.subCategoryDescription}">
+<input type="submit" value="Edit Sub-Category"/>
 </c:if>
-<c:if test="${empty subCategory.subCategoryDescription}">
-<input type="submit" value="Add Sub Category"/>
+<c:if test="${empty subCategory.subCategoryName || empty subCategory.subCategoryDescription}">
+<input type="submit" value="Add Sub-Category"/>
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
 <tr>
 <td><input type="text" ng-model="find" placeholder="Search"/></td>
 </tr>
 </form:form>
+</div>
 <table id="subCategoryTable">
-<tr>
+<tr align="left">
 <td>
 <input type="button" class="btn btn-link" ng-click="sortType='subCategoryId'; sortReverse = !sortReverse" value="SUB CATEGORY ID">
 <span ng-show="sortType == 'subCategoryId' && !sortReverse" class="fa fa-caret-down"></span>

@@ -13,17 +13,26 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.cakes.sweettooth.daoimpl.BakerDAOImpl;
 import com.cakes.sweettooth.model.Baker;
+import com.cakes.sweettooth.model.BillingAddress;
+import com.cakes.sweettooth.model.Cart;
 import com.cakes.sweettooth.model.Category;
 import com.cakes.sweettooth.model.Product;
+import com.cakes.sweettooth.model.Role;
+import com.cakes.sweettooth.model.ShippingAddress;
 import com.cakes.sweettooth.model.SubCategory;
+import com.cakes.sweettooth.model.User;
+import com.cakes.sweettooth.model.UserDetails;
+import com.cakes.sweettooth.model.UserRole;
+import com.cakes.sweettooth.service.BakerService;
 
 @Configuration
 @ComponentScan("com.cakes.sweettooth")
 @EnableTransactionManagement
 public class HibernateConfig 
 {
-	
 	@Bean(name="dataSource")
 	public DataSource dataSource()
 	{
@@ -58,6 +67,7 @@ public class HibernateConfig
 		return txManager;
 	}
 	
+	
 	@Autowired
 	@Bean(name="sessionFactory")
 	public SessionFactory SessionFactory(DataSource dataSource)
@@ -68,6 +78,13 @@ public class HibernateConfig
 		sessionBuilder.addAnnotatedClass(Baker.class);
 		sessionBuilder.addAnnotatedClass(SubCategory.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(BillingAddress.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
+		sessionBuilder.addAnnotatedClass(Role.class);
+		sessionBuilder.addAnnotatedClass(ShippingAddress.class);
+		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(UserDetails.class);
+		sessionBuilder.addAnnotatedClass(UserRole.class);
 		
 		return sessionBuilder.buildSessionFactory();
 	}

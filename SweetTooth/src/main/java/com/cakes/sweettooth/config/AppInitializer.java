@@ -14,7 +14,6 @@ public class AppInitializer implements WebApplicationInitializer
 
 	public void onStartup(ServletContext container) throws ServletException 
 	{
-		System.out.println("THIS IS LINE 1");
 		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
 		ctx.register(AppConfig.class);
 		ctx.setServletContext(container);

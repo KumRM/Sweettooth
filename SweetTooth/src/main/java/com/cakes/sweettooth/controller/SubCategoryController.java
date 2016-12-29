@@ -35,7 +35,7 @@ public class SubCategoryController
 	}
 	
 	@RequestMapping("/addSubCategory")
-	public String addSubCategory(Model model, @Valid @ModelAttribute("subCategory")SubCategory subCategory, BindingResult bindingResult)
+	public String addSubCategory(@Valid @ModelAttribute("subCategory")SubCategory subCategory, BindingResult bindingResult,Model model)
 	{
 		if(bindingResult.hasErrors())
 		{

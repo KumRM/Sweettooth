@@ -15,7 +15,12 @@ import com.google.gson.Gson;
 public class BakerDAOImpl implements BakerDAO
 {
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
+	
+//	public BakerDAOImpl(SessionFactory sessionFactory)
+//	{
+//		this.sessionFactory=sessionFactory;
+//	}
 	
 	public void addBaker(Baker baker) 
 	{

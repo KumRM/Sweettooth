@@ -24,14 +24,12 @@ public class AppConfig extends WebMvcConfigurerAdapter
 		viewResolver.setViewClass(JstlView.class);
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
-		System.out.println("THIS LINE RAN");
 		return viewResolver;
 	}
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) 
 	{
-		System.out.println("THIS IS LINE 2");
 		configurer.enable();
 	}
 	

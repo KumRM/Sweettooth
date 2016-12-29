@@ -20,20 +20,26 @@ function toggle()
 #categoryTable
 {
 display: none;
-max-width: 600px;
+max-width: 400px;
 }
 </style>
-<div ng-app="app" ng-controller="myCtrl" align="center">
+<div align="center">
+<h1>
+<p style="font-size: x-large;">CATEGORY REGISTRATION FORM</p>
+</h1>
+</div>
+<div ng-app="app" id="contain" ng-controller="myCtrl" align="center">
+<div class="signup" align="center">
 <form:form modelAttribute="category" action="addCategory">
 <form:input type="hidden" path="categoryId"/>
 <form:input path="categoryName" placeholder="Enter Category Name"/>
 <form:errors path="categoryName"/><br>
 <form:input path="categoryDescription" placeholder="Enter Category Description"/>
 <form:errors path="categoryDescription"/><br>
-<c:if test="${!empty category.categoryName}">
+<c:if test="${!empty category.categoryName && !empty category.categoryDescription}">
 <input type="submit" value="Edit Category"/>
 </c:if>
-<c:if test="${empty category.categoryName}">
+<c:if test="${empty category.categoryName || empty category.categoryDescription}">
 <input type="submit" value="Add Category"/>
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
@@ -41,8 +47,9 @@ max-width: 600px;
 <td><input type="text" ng-model="find" placeholder="Search"/></td>
 </tr>
 </form:form>
+</div>
 <table id="categoryTable">
-<tr>
+<tr align="left">
 <td>
 <input type="button" class="btn btn-link" ng-click="sortType='categoryId'; sortReverse = !sortReverse" value="CATEGORY ID">
 <span ng-show="sortType == 'categoryId' && !sortReverse" class="fa fa-caret-down"></span>

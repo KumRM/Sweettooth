@@ -20,10 +20,16 @@ function toggle()
 #productTable
 {
 display: none;
-max-width: 600px;
+max-width: 400px;
 }
 </style>
-<div ng-app="app" ng-controller="myCtrl" align="center">
+<div align="center">
+<h1>
+<p style="font-size: x-large;">PRODUCT REGISTRATION FORM</p>
+</h1>
+</div>
+<div ng-app="app" id="contain" ng-controller="myCtrl" align="center">
+<div class="signup" align="center">
 <form:form enctype="multipart/form-data" modelAttribute="product" action="addProduct">
 <form:input type="hidden" path="productId"/>
 <form:input path="productName" placeholder="Enter Product Name"/>
@@ -46,7 +52,7 @@ max-width: 600px;
 <form:options items="${bakerList}" itemValue="bakerName" itemLabel="bakerName"/>
 </form:select>
 <c:if test="${!empty product.productName && !empty product.productDescription && !empty product.productQuantity && !empty product.productDiscount && !empty product.productPrice}">
-<input type="submit" value="Add Product"/>
+<input type="submit" value="Edit Product"/>
 </c:if>
 <c:if test="${empty product.productName || empty product.productDescription || empty product.productQuantity || empty product.productDiscount || empty product.productPrice}">
 <input type="submit" value="Add Product"/>
@@ -57,8 +63,9 @@ max-width: 600px;
 <td><input type="text" ng-model="find" placeholder="Search"/></td>
 </tr>
 </form:form>
+</div>
 <table id="productTable">
-<tr>
+<tr align="left">
 <td>
 <input type="button" class="btn btn-link" ng-click="sortType='productId'; sortReverse = !sortReverse" value="PRODUCT ID">
 <span ng-show="sortType == 'productId' && !sortReverse" class="fa fa-caret-down"></span>

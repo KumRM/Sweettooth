@@ -12,4 +12,10 @@ public class CakeController {
 
 		return "index";
 	}
+	
+	@RequestMapping("/403")
+	public String error403()
+	{
+		return "/AccessDenied";
+	}
 }
