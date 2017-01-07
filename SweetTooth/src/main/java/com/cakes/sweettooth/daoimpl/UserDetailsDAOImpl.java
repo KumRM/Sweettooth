@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cakes.sweettooth.dao.UserDetailsDAO;
+import com.cakes.sweettooth.model.BillingAddress;
 import com.cakes.sweettooth.model.Cart;
+import com.cakes.sweettooth.model.ShippingAddress;
 import com.cakes.sweettooth.model.User;
 import com.cakes.sweettooth.model.UserDetails;
 import com.cakes.sweettooth.model.UserRole;
@@ -46,16 +48,26 @@ public class UserDetailsDAOImpl implements UserDetailsDAO
 		
 		session.saveOrUpdate(userRole);
 		
-		userDetails.getBillingAddress().setUserDetails(userDetails);
-		session.saveOrUpdate(userDetails.getBillingAddress());
+//		userDetails.getBillingAddress().setUserDetails(userDetails);
+//		session.saveOrUpdate(userDetails.getBillingAddress());
 		
-		userDetails.getShippingAddress().setUserDetails(userDetails);
-		session.saveOrUpdate(userDetails.getShippingAddress());
+//		userDetails.getShippingAddress().setUserDetails(userDetails);
+//		session.saveOrUpdate(userDetails.getShippingAddress());
 		
 		userDetails.setUserId(user.getUserId());
 		userDetails.setCartId(cart.getCartId());
 		session.saveOrUpdate(userDetails);
 		
 		session.flush();
+	}
+	
+	public void saveShippingAddress(ShippingAddress shippingAddress)
+	{
+		sessionFactory.getCurrentSession().saveOrUpdate(shippingAddress);
+	}
+	
+	public void saveBillingAddress(BillingAddress billingAddress)
+	{
+		sessionFactory.getCurrentSession().saveOrUpdate(billingAddress);
 	}
 }

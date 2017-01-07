@@ -14,7 +14,6 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.cakes.sweettooth.daoimpl.BakerDAOImpl;
 import com.cakes.sweettooth.model.Baker;
 import com.cakes.sweettooth.model.BillingAddress;
 import com.cakes.sweettooth.model.Cart;
@@ -26,7 +25,6 @@ import com.cakes.sweettooth.model.SubCategory;
 import com.cakes.sweettooth.model.User;
 import com.cakes.sweettooth.model.UserDetails;
 import com.cakes.sweettooth.model.UserRole;
-import com.cakes.sweettooth.service.BakerService;
 
 @Configuration
 @ComponentScan("com.cakes.sweettooth")
@@ -87,5 +85,23 @@ public class HibernateConfig
 		sessionBuilder.addAnnotatedClass(UserRole.class);
 		
 		return sessionBuilder.buildSessionFactory();
+	}
+	
+	@Bean(name="webFlowHandler")
+	public WebFlowHandler webFlowHandler()
+	{
+		return new WebFlowHandler();
+	}
+	
+	@Bean(name="shippingAddress")
+	public ShippingAddress shippingAddress()
+	{
+		return new ShippingAddress();
+	}
+	
+	@Bean(name="billingAddress")
+	public BillingAddress billingAddress()
+	{
+		return new BillingAddress();
 	}
 }

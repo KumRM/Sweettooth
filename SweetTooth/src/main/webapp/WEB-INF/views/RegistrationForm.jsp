@@ -27,10 +27,10 @@ max-width: 400px;
 <form:errors path="userName"/><br>
 <form:password path="password" placeholder="Enter Your Password"/>
 <form:errors path="password"/><br>
-<form:input path="shippingAddress.flatNo" placeholder="Enter Flat No"/>
+<%-- <form:input path="shippingAddress.flatNo" placeholder="Enter Flat No"/>
 <form:errors path="shippingAddress.flatNo"/><br>
 <form:input path="billingAddress.flatNo" placeholder="Enter Flat No"/>
-<form:errors path="billingAddress.flatNo"/><br>
+<form:errors path="billingAddress.flatNo"/><br> --%>
 <%-- <c:if test="${!empty category.categoryName && !empty category.categoryDescription}"> --%>
 <!-- <input type="submit" value="Edit Category"/> -->
 <%-- </c:if> --%>

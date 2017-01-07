@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.cakes.sweettooth.dao.ProductDAO;
 import com.cakes.sweettooth.model.Product;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Repository
 public class ProductDAOImpl implements ProductDAO
@@ -38,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO
 		@SuppressWarnings("unchecked")
 		List<Product> productList = session.createQuery(hql).getResultList();
 		
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String jsonList = gson.toJson(productList);
 		return jsonList;
 	}

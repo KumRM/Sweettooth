@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 	{
 		authenticationManagerBuilder.
 		jdbcAuthentication().dataSource(dataSource)
-		.usersByUsernameQuery("select userName, password, enabled from User where userName=?")
+		.usersByUsernameQuery("select userName, password, enabled from User where userName =?")
 		.authoritiesByUsernameQuery
 ("select username, rolename from user u, role r, userrole ur where u.userid = ur.userid and r.roleid = ur.roleid and username = ?");
 	}

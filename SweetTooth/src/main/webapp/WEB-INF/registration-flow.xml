@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+<!--     <secured attributes="ROLE_USER" /> -->
+
+	<var name="userDetails" class="com.cakes.sweettooth.model.UserDetails"/>
+	<var name="shippingAddress" class="com.cakes.sweettooth.model.ShippingAddress"/>
+	<var name="billingAddress" class="com.cakes.sweettooth.model.BillingAddress"/>	
+	
+	<on-start>
+		<evaluate expression="webFlowHandler.initFlow()" result="flowScope.userDetails"/>
+	</on-start>
+	
+	<view-state id="start" model="userDetails" view="registrationWebFlow">
+	<transition on="submit" to="validate"/>
+	</view-state>
+	
+	<action-state id="validate">
+	<evaluate expression="webFlowHandler.validateUser(userDetails, messageContext)"/>
+	<transition on="failure" to="start"/>
+	<transition on="success" to="startShippingAddress"/>
+	</action-state>
+	
+	<view-state id="startShippingAddress" model="shippingAddress" view="shippingAddressWebFlow">
+	<transition on="submit" to="addShippingAddress"/>
+	</view-state>
+	
+	<action-state id="addShippingAddress">
+		<evaluate expression="webFlowHandler.addShippingAddress(shippingAddress)"/>
+		<transition on="failure" to="startShippingAddress"/>
+	<transition on="success" to="startBillingAddress"/>
+	</action-state>
+	
+	<view-state id="startBillingAddress" model="billingAddress" view="billingAddressWebFlow">
+	<transition on="submit" to="addBillingAddress"/>
+	</view-state>
+	
+	<action-state id="addBillingAddress">
+		<evaluate expression="webFlowHandler.addBillingAddress(billingAddress)"/>
+		<transition on="failure" to="startBillingAddress"/>
+	<transition on="success" to="save"/>
+	</action-state>
+	
+	<action-state id="save">
+		<evaluate expression="webFlowHandler.registerUser(userDetails, shippingAddress, billingAddress)"/>
+	<transition on="success" to="welcome"/>
+	</action-state>
+	
+	<end-state id="welcome" view="index">
+	</end-state>
+</flow>

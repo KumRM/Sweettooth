@@ -23,7 +23,7 @@ public class CategoryController
 	{
 		model.addAttribute("category", new Category());
 //		model.addAttribute("categoryList", categoryService.getList());
-		model.addAttribute("categoryList", categoryService.getJsonList());
+		model.addAttribute("categoryJsonList", categoryService.getJsonList());
 		return "/CategoryForm";
 	}
 

@@ -43,12 +43,14 @@ max-width: 400px;
 <input type="submit" value="Add Category"/>
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
-<tr>
-<td><input type="text" ng-model="find" placeholder="Search"/></td>
-</tr>
 </form:form>
 </div>
-<table id="categoryTable">
+<table class="table table-hover" id="categoryTable">
+<tr>
+<td align="right">
+<input type="text" ng-model="find" placeholder="Search"/>
+</td>
+</tr>
 <tr align="left">
 <td>
 <input type="button" class="btn btn-link" ng-click="sortType='categoryId'; sortReverse = !sortReverse" value="CATEGORY ID">
@@ -86,7 +88,7 @@ max-width: 400px;
 <script type="text/javascript">
 var app =  angular.module('app',[]);
 app.controller("myCtrl",function ($scope){
-	$scope.jsonData = ${categoryList};
+	$scope.jsonData = ${categoryJsonList};
 });
 </script>
 </div>

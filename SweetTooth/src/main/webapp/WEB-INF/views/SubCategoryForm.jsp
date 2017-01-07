@@ -36,7 +36,7 @@ max-width: 400px;
 <form:errors path="subCategoryName"></form:errors><br>
 <form:input path="subCategoryDescription" placeholder="Enter Sub-Category Description"/>
 <form:errors path="subCategoryDescription"/><br>
-<form:select path="category.categoryName" items="${categoryList}" itemValue="categoryName" itemLabel="categoryName" />
+<form:select path="category.categoryName" items="${categoryList}" itemValue="categoryName" itemLabel="categoryName"/>
 <c:if test="${!empty subCategory.subCategoryName && !empty subCategory.subCategoryDescription}">
 <input type="submit" value="Edit Sub-Category"/>
 </c:if>
@@ -44,12 +44,14 @@ max-width: 400px;
 <input type="submit" value="Add Sub-Category"/>
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
-<tr>
-<td><input type="text" ng-model="find" placeholder="Search"/></td>
-</tr>
 </form:form>
 </div>
-<table id="subCategoryTable">
+<table class="table table-hover" id="subCategoryTable">
+<tr>
+<td align="right">
+<input type="text" ng-model="find" placeholder="Search"/>
+</td>
+</tr>
 <tr align="left">
 <td>
 <input type="button" class="btn btn-link" ng-click="sortType='subCategoryId'; sortReverse = !sortReverse" value="SUB CATEGORY ID">

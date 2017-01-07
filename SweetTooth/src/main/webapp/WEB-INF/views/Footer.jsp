@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
-
     <!-- The content of your page would go here. -->
 	<footer class="footer-distributed">
 
@@ -27,7 +26,7 @@
 					<a href="#">Contact Us.</a>
 				</p>
 
-				<p class="footer-company-name">SweetTooth, 2016.</p>
+				<p class="footer-company-name">SweetTooth, 2017.</p>
 			</div>
 
 			<div class="footer-center">

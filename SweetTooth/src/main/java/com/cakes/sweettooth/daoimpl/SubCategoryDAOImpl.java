@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.cakes.sweettooth.dao.SubCategoryDAO;
 import com.cakes.sweettooth.model.SubCategory;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Repository
 public class SubCategoryDAOImpl implements SubCategoryDAO 
@@ -38,7 +39,7 @@ public class SubCategoryDAOImpl implements SubCategoryDAO
 		@SuppressWarnings("unchecked")
 		List<SubCategory> subCategoryList = session.createQuery(hql).getResultList();
 		
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String jsonList = gson.toJson(subCategoryList);
 		
 		return jsonList;

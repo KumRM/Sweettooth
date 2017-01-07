@@ -59,12 +59,14 @@ max-width: 400px;
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
 <form:input type="file" path="productImage"/>
-<tr>
-<td><input type="text" ng-model="find" placeholder="Search"/></td>
-</tr>
 </form:form>
 </div>
-<table id="productTable">
+<table class="table table-hover" id="productTable">
+<tr>
+<td align="right">
+<input type="text" ng-model="find" placeholder="Search"/>
+</td>
+</tr>
 <tr align="left">
 <td>
 <input type="button" class="btn btn-link" ng-click="sortType='productId'; sortReverse = !sortReverse" value="PRODUCT ID">

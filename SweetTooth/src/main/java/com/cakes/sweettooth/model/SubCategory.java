@@ -9,6 +9,8 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 public class SubCategory 
 {
@@ -16,13 +18,14 @@ public class SubCategory
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int subCategoryId;
 	private int categoryId;
-
+	
+	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	private String subCategoryName;
 	
+	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	private String subCategoryDescription;
-	
 	
 	@ManyToOne
 	@JoinColumn(name="categoryId", updatable=false, insertable=false, nullable=false)

@@ -12,6 +12,8 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 public class Product 
 {
@@ -23,22 +25,27 @@ public class Product
 	private int subCategoryId;
 	private int categoryId;
 	
+	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	@Pattern(regexp="[0-9]+")
 	private String productPrice;
 	
+	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	@Pattern(regexp="[0-9]+")
 	private String productDiscount;
 	
+	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	@Pattern(regexp="[0-9]+")
 	private String productQuantity;
 	
+	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Name Format")
 	private String productName;
 	
+	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	private String productDescription;
 	
@@ -53,14 +60,17 @@ public class Product
 		this.productImage = productImage;
 	}
 
+	@Expose
 	@ManyToOne
 	@JoinColumn(name="categoryId", updatable=false, insertable=false, nullable=false)
 	private Category category;
 	
+	@Expose
 	@ManyToOne
 	@JoinColumn(name="subCategoryId", updatable=false, insertable=false, nullable=false)
 	private SubCategory subCategory;
 
+	@Expose
 	@ManyToOne
 	@JoinColumn(name="bakerId", updatable=false, insertable=false, nullable=false)
 	private Baker baker;

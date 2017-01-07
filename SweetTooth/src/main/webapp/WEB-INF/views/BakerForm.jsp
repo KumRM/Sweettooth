@@ -47,10 +47,14 @@ max-width: 400px;
 <input type="submit" value="Add Baker"/>
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
-<input type="text" ng-model="find" placeholder="Search"/>
 </form:form>
 </div>
-<table id="bakerTable">
+<table class="table table-hover" id="bakerTable">
+<tr>
+<td align="right">
+<input type="text" ng-model="find" placeholder="Search"/>
+</td>
+</tr>
 <tr align="left">
 <td>
 <input type="button" class="btn btn-link" ng-click="sortType='bakerId'; sortReverse = !sortReverse" value="BAKER ID">
