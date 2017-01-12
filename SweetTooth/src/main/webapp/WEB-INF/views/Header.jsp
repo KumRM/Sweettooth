@@ -37,7 +37,7 @@
       	<li class="dropdown mega-dropdown">
         <button type="button" class="btn btn-default"><a href="/SweetTooth/">Home</a></button>
         <button type="button" class="btn btn-default">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <span class="glyphicon glyphicon-menu-hamburger"></span></a>
         
         <ul class="dropdown-menu mega-dropdown-menu row">
 					<li class="col-sm-3">
@@ -72,15 +72,6 @@
 						<li>${category.categoryName}</li>
 						<c:forEach items="${category.subCategorySet}" var="subCategory">
 						<li><a>${subCategory.subCategoryName}</a></li>
-<!-- 							<li class="dropdown-header">Dresses</li> -->
-<!--  							<li><a href="#">Unique Features</a></li> --> 
-<!--  							<li><a href="#">Image Responsive</a></li> -->
-<!--  							<li><a href="#">Auto Carousel</a></li> -->
-<!--  							<li><a href="#">Newsletter Form</a></li> --> 
-<!--  							<li><a href="#">Four columns</a></li> -->
-<!--  							<li class="divider"></li> --> 
-<!-- 							<li class="dropdown-header">Tops</li> -->
-<!-- 							<li><a href="#">Good Typography</a></li> -->
 						</c:forEach>
 						</ul>
 						</c:forEach>
@@ -167,6 +158,16 @@
 </div>
 </nav>
 
+<!-- SOCIAL LINKS -->
+
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px; right:0px;">
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_linkedin"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
 
 
 <!-- <nav class="navbar navbar-fixed-top"> -->
@@ -272,16 +273,6 @@
 
 
 
-<!-- SOCIAL LINKS -->
-
-<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px; right:0px;">
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_linkedin"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-</div>
 
 <!-- </div> -->
       

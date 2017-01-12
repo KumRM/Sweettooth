@@ -20,7 +20,7 @@ function toggle()
 #bakerTable
 {
 display: none;
-max-width: 400px;
+max-width: 750px;
 }
 </style>
 <div align="center">
@@ -28,18 +28,35 @@ max-width: 400px;
 <p style="font-size: x-large;">BAKER REGISTRATION FORM</p>
 </h1>
 </div>
-<div ng-app="app" id="contain" ng-controller="myCtrl" align="center">
-<div class="signup" align="center">
+<div ng-app="app" ng-controller="myCtrl" align="left">
+<div align="center">
+<fieldset>
 <form:form modelAttribute="baker" action="addBaker">
 <form:input type="hidden" path="bakerId"/>
-<form:input path="bakerName" placeholder="Enter Baker Name"/>
-<form:errors path="bakerName"/><br>
-<form:input path="bakerAddress" placeholder="Enter Baker Address"/>
-<form:errors path="bakerAddress"/><br>
-<form:input path="bakerContact" placeholder="Enter Baker Contact"/>
-<form:errors path="bakerContact"/><br>
-<form:input path="bakerEmail" placeholder="Enter Baker Email"/>
-<form:errors path="bakerEmail"/><br>
+<div class='kickass_field'>
+          <form:input path="bakerName" maxlength='30' required='required'/>
+          <lable>
+            <i>BAKER NAME</i>
+          </lable>
+        </div>
+<div class='kickass_field'>        
+			<form:input path="bakerAddress" maxlength='30' required='required'/>
+          <lable>
+            <i>BAKER ADDRESS</i>
+          </lable>
+        </div>
+<div class='kickass_field'>        
+			<form:input path="bakerContact" maxlength='30' required='required'/>
+          <lable>
+            <i>BAKER CONTACT</i>
+          </lable>
+        </div>
+<div class='kickass_field'>        
+			<form:input path="bakerEmail" maxlength='30' required='required'/>
+          <lable>
+            <i>BAKER E-MAIL</i>
+          </lable>
+        </div>
 <c:if test="${!empty baker.bakerName && !empty baker.bakerAddress && !empty baker.bakerContact && !empty baker.bakerEmail}">
 <input type="submit" value="Edit Baker"/>
 </c:if>
@@ -48,8 +65,10 @@ max-width: 400px;
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
 </form:form>
+</fieldset>
 </div>
-<table class="table table-hover" id="bakerTable">
+<div align="center" class="table-responsive">
+<table class="table table-hover table-condensed table-sm" id="bakerTable">
 <tr>
 <td align="right">
 <input type="text" ng-model="find" placeholder="Search"/>
@@ -99,10 +118,11 @@ max-width: 400px;
 <td>{{bList.bakerAddress}}</td>
 <td>{{bList.bakerContact}}</td>
 <td>{{bList.bakerEmail}}</td>
-<td><a href="deleteBaker-{{bList.bakerId}}">Delete</a></td>
-<td><a href="editBaker-{{bList.bakerId}}">Edit</a></td>
+<td><a href="deleteBaker-{{bList.bakerId}}"><i class="fa fa-times"></i></a></td>
+<td><a href="editBaker-{{bList.bakerId}}"><i class="fa fa-pencil"></i></a></td>
 </tr>
 </table>
+</div>
 <script type="text/javascript">
 var app =  angular.module('app',[]);
 app.controller("myCtrl",function ($scope){

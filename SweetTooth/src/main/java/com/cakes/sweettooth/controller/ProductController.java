@@ -23,6 +23,8 @@ import com.cakes.sweettooth.service.BakerService;
 import com.cakes.sweettooth.service.CategoryService;
 import com.cakes.sweettooth.service.ProductService;
 import com.cakes.sweettooth.service.SubCategoryService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Controller
 public class ProductController 
@@ -123,5 +125,14 @@ public class ProductController
 	{
 		productService.deleteProduct(productId);
 		return "redirect:/ProductForm";
+	}
+	
+	@RequestMapping("/viewProduct-{productId}")
+	public String viewProduct(Model model, @PathVariable("productId") int productId)
+	{
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String product = gson.toJson(productService.getProductViewById(productId));
+		model.addAttribute("prd", product);
+		return "/ProductDetails";
 	}
 }

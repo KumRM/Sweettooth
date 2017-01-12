@@ -15,8 +15,11 @@ import com.google.gson.annotations.Expose;
 public class SubCategory 
 {
 	@Id
+	@Expose
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int subCategoryId;
+	
+	@Expose
 	private int categoryId;
 	
 	@Expose

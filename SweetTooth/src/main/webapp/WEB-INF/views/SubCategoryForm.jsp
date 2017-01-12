@@ -20,7 +20,7 @@ function toggle()
 #subCategoryTable
 {
 display: none;
-max-width: 400px;
+max-width: 750px;
 }
 </style>
 <div align="center">
@@ -28,15 +28,26 @@ max-width: 400px;
 <p style="font-size: x-large;">SUB-CATEGORY REGISTRATION FORM</p>
 </h1>
 </div>
-<div ng-app="app" id="contain" ng-controller="myCtrl" align="center">
-<div class="signup" align="center">
+<div ng-app="app" ng-controller="myCtrl" align="left">
+<div align="center">
+<fieldset>
 <form:form modelAttribute="subCategory" action="addSubCategory">
 <form:input type="hidden" path="subCategoryId"/>
-<form:input path="subCategoryName" placeholder="Enter Sub-Category Name"/>
-<form:errors path="subCategoryName"></form:errors><br>
-<form:input path="subCategoryDescription" placeholder="Enter Sub-Category Description"/>
-<form:errors path="subCategoryDescription"/><br>
+<div class='kickass_field'>
+          <form:input path="subCategoryName" maxlength='30' required='required'/>
+          <lable>
+            <i>SUB-CATEGORY NAME</i>
+          </lable>
+        </div>
+<div class='kickass_field'>        
+			<form:input path="subCategoryDescription" maxlength='30' required='required'/>
+          <lable>
+            <i>SUB-CATEGORY DESCRIPTION</i>
+          </lable>
+        </div>
+<div>        
 <form:select path="category.categoryName" items="${categoryList}" itemValue="categoryName" itemLabel="categoryName"/>
+</div>
 <c:if test="${!empty subCategory.subCategoryName && !empty subCategory.subCategoryDescription}">
 <input type="submit" value="Edit Sub-Category"/>
 </c:if>
@@ -45,8 +56,10 @@ max-width: 400px;
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
 </form:form>
+</fieldset>
 </div>
-<table class="table table-hover" id="subCategoryTable">
+<div align="center" class="table-responsive">
+<table class="table table-hover table-condensed table-sm" id="subCategoryTable">
 <tr>
 <td align="right">
 <input type="text" ng-model="find" placeholder="Search"/>
@@ -82,10 +95,11 @@ max-width: 400px;
 <td>{{scList.subCategoryId}}</td>
 <td>{{scList.subCategoryName}}</td>
 <td>{{scList.subCategoryDescription}}</td>
-<td><a href="deleteSubCategory-{{scList.subCategoryId}}">Delete</a></td>
-<td><a href="editSubCategory-{{scList.subCategoryId}}">Edit</a></td>
+<td><a href="deleteSubCategory-{{scList.subCategoryId}}"><i class="fa fa-times"></i></a></td>
+<td><a href="editSubCategory-{{scList.subCategoryId}}"><i class="fa fa-pencil"></i></a></td>
 </tr>
 </table>
+</div>
 <script type="text/javascript">
 var app =  angular.module('app',[]);
 app.controller("myCtrl",function ($scope){

@@ -1,5 +1,7 @@
 package com.cakes.sweettooth.daoimpl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,5 +71,22 @@ public class UserDetailsDAOImpl implements UserDetailsDAO
 	public void saveBillingAddress(BillingAddress billingAddress)
 	{
 		sessionFactory.getCurrentSession().saveOrUpdate(billingAddress);
+	}
+	
+	public UserDetails getUserByName(String userName)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+		List<UserDetails> userList = session.createQuery("from UserDetails where userName = '"+userName+"'").getResultList();
+		return userList.get(0);
+	}
+	
+	public int checkUserName(String userName)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+		List<UserDetails> userList = session.createQuery("from UserDetails where userName = '"+userName+"'").getResultList();
+		int count = userList.size();
+		return count;
 	}
 }

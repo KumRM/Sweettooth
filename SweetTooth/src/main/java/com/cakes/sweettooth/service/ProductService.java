@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cakes.sweettooth.daoimpl.ProductDAOImpl;
 import com.cakes.sweettooth.model.Product;
+import com.cakes.sweettooth.model.ProductView;
 
 @Service
 @Transactional
@@ -39,5 +40,15 @@ public class ProductService
 	public void deleteProduct(int productId) 
 	{
 		productDAOImpl.deleteProduct(productId);
+	}
+	
+	public ProductView getProductViewById(int productId)
+	{
+		return productDAOImpl.getProductViewById(productId);
+	}
+	
+	public void deleteProductQuantity(int productId)
+	{
+		productDAOImpl.deleteProductQuantity(productId);
 	}
 }

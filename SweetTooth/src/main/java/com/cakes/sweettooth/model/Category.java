@@ -18,6 +18,7 @@ import com.google.gson.annotations.Expose;
 public class Category 
 {
 	@Id
+	@Expose
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int categoryId;
 	

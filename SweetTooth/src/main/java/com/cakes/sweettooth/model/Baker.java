@@ -7,22 +7,29 @@ import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 public class Baker 
 {
 @Id
+@Expose
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private int bakerId;
 
+@Expose
 @NotEmpty(message="Field Cannot Be Left Empty")
 private String bakerName;
 
+@Expose
 @NotEmpty(message="Field Cannot Be Left Empty")
 private String bakerAddress;
 
+@Expose
 @NotEmpty(message="Field Cannot Be Left Empty")
 private String bakerContact;
 
+@Expose
 @NotEmpty(message="Field Cannot Be Left Empty")
 private String bakerEmail;
 

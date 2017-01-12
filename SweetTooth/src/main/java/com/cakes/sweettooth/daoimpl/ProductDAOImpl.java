@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cakes.sweettooth.dao.ProductDAO;
 import com.cakes.sweettooth.model.Product;
+import com.cakes.sweettooth.model.ProductView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -53,11 +54,25 @@ public class ProductDAOImpl implements ProductDAO
 		return productById.get(0);
 	}
 
+	public ProductView getProductViewById(int productId) 
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from ProductView where productId = "+productId;
+		@SuppressWarnings("unchecked")
+		List<ProductView> productViewById = session.createQuery(hql).getResultList();
+		return productViewById.get(0);
+	}
+	
+	public void deleteProductQuantity(int productId)
+	{
+		String hql = "update Product set productQuantity = productQuantity-1 where productId =" + productId;
+		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+	}
+	
 	public void deleteProduct(int productId) 
 	{
 		Product productToDelete = new Product();
 		productToDelete.setProductId(productId);
 		sessionFactory.getCurrentSession().delete(productToDelete);
 	}
-
 }

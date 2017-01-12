@@ -17,8 +17,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.cakes.sweettooth.model.Baker;
 import com.cakes.sweettooth.model.BillingAddress;
 import com.cakes.sweettooth.model.Cart;
+import com.cakes.sweettooth.model.CartItem;
 import com.cakes.sweettooth.model.Category;
 import com.cakes.sweettooth.model.Product;
+import com.cakes.sweettooth.model.ProductView;
 import com.cakes.sweettooth.model.Role;
 import com.cakes.sweettooth.model.ShippingAddress;
 import com.cakes.sweettooth.model.SubCategory;
@@ -83,6 +85,8 @@ public class HibernateConfig
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
 		sessionBuilder.addAnnotatedClass(UserRole.class);
+		sessionBuilder.addAnnotatedClass(CartItem.class);
+		sessionBuilder.addAnnotatedClass(ProductView.class);
 		
 		return sessionBuilder.buildSessionFactory();
 	}

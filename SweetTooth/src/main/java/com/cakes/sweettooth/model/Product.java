@@ -18,27 +18,33 @@ import com.google.gson.annotations.Expose;
 public class Product 
 {
 	@Id
+	@Expose
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int productId;
 	
+	@Expose
 	private int bakerId;
+	
+	@Expose
 	private int subCategoryId;
+	
+	@Expose
 	private int categoryId;
 	
 	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	@Pattern(regexp="[0-9]+")
-	private String productPrice;
+	private int productPrice;
 	
 	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	@Pattern(regexp="[0-9]+")
-	private String productDiscount;
+	private int productDiscount;
 	
 	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
 	@Pattern(regexp="[0-9]+")
-	private String productQuantity;
+	private int productQuantity;
 	
 	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
@@ -75,6 +81,30 @@ public class Product
 	@JoinColumn(name="bakerId", updatable=false, insertable=false, nullable=false)
 	private Baker baker;
 
+	public int getProductPrice() {
+		return productPrice;
+	}
+
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
+	}
+
+	public int getProductDiscount() {
+		return productDiscount;
+	}
+
+	public void setProductDiscount(int productDiscount) {
+		this.productDiscount = productDiscount;
+	}
+
+	public int getProductQuantity() {
+		return productQuantity;
+	}
+
+	public void setProductQuantity(int productQuantity) {
+		this.productQuantity = productQuantity;
+	}
+	
 	public int getProductId() {
 		return productId;
 	}
@@ -105,30 +135,6 @@ public class Product
 
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
-	}
-
-	public String getProductPrice() {
-		return productPrice;
-	}
-
-	public void setProductPrice(String productPrice) {
-		this.productPrice = productPrice;
-	}
-
-	public String getProductDiscount() {
-		return productDiscount;
-	}
-
-	public void setProductDiscount(String productDiscount) {
-		this.productDiscount = productDiscount;
-	}
-
-	public String getProductQuantity() {
-		return productQuantity;
-	}
-
-	public void setProductQuantity(String productQuantity) {
-		this.productQuantity = productQuantity;
 	}
 
 	public String getProductName() {
@@ -170,5 +176,4 @@ public class Product
 	public void setBaker(Baker baker) {
 		this.baker = baker;
 	}
-
 	}

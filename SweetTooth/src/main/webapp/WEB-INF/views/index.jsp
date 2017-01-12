@@ -17,7 +17,7 @@
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
 				<h1 class="brand_name">
-					<i><b><a href="./">SweetTooth</a></b></i>
+					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
 				<h1 class="brand_name">
-					<i><b><a href="./">SweetTooth</a></b></i>
+					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
 				<h1 class="brand_name">
-					<i><b><a href="./">SweetTooth</a></b></i>
+					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
 		</div>
@@ -50,7 +50,7 @@
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
 				<h1 class="brand_name">
-					<i><b><a href="./">SweetTooth</a></b></i>
+					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
 		</div>
@@ -78,7 +78,7 @@
 
 <!--=============DECORATION/SEPARATION=================-->
 
-<div class="decoration"><a>oooooooooooooooooooooooooo</a>
+<div class="decoration"><p>oooooooooooooooooooooooooo</p>
 	<h2><em>Our</em><i>Products</i></h2>
 </div>
 
@@ -88,10 +88,10 @@
 	<!--===============FIRST COLUMN==========-->
 	<div class="gallery_col-1">
 		<!--=========CUPCAKES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img03_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                     style="padding-bottom: 93.96551724137931%;" -->
-			<img src="resources/Images/CupCakes/nutellacupcakes.jpg"
+			class="gallery_item thumb lazy-img"> <!--                     style="padding-bottom: 93.96551724137931%;" -->
+			<img src="resources/Images/CupCakes/nutellacupcakes.jpg" class="img-responsive"
 			alt="Cup Cakes">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
@@ -102,12 +102,12 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 		<!--=========CUSTOM CAKES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img04_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                     style="padding-bottom: 74.13793103448276%;" -->
-			<img src="resources/Images/CustomCakes/28494504-Sweets-seamless-background-of-cakes-chocolate-biscuits-macaron-donut-vector-illustration-Stock-Vector.jpg" alt="Custom Cakes">
+			class="gallery_item thumb lazy-img"> <!--                     style="padding-bottom: 74.13793103448276%;" -->
+			<img src="resources/Images/CustomCakes/28494504-Sweets-seamless-background-of-cakes-chocolate-biscuits-macaron-donut-vector-illustration-Stock-Vector.jpg" class="img-responsive" alt="Custom Cakes">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
 					<p>
@@ -117,12 +117,13 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
+		
 		<!--=========CHOCOLATES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img05_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                      style="padding-bottom: 94.6551724137931%;"> -->
-			<img src="resources/Images/Chocolates/0013414_chocolate-mixed_500.jpeg"
+			class="gallery_item thumb lazy-img"> <!--                      style="padding-bottom: 94.6551724137931%;"> -->
+			<img src="resources/Images/Chocolates/0013414_chocolate-mixed_500.jpeg"	class="img-responsive"
 			alt="Chocolates">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
@@ -133,15 +134,15 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 	</div>
 	<!--=========SECOND COLUMN=========-->
 	<div class="gallery_col-2">
 		<!--=========BROWNIES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img06_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                      style="padding-bottom: 52.48322147651007%;" -->
-			<img src="resources/Images/Brownies/mochacheesecakebrownie.jpg"
+			class="gallery_item thumb lazy-img"> <!--                      style="padding-bottom: 52.48322147651007%;" -->
+			<img src="resources/Images/Brownies/mochacheesecakebrownie.jpg"	class="img-responsive"
 			alt="Brownies">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
@@ -152,12 +153,12 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 		<!--=========WEDDING CAKES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img07_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                      style="padding-bottom: 55.97315436241611%;"-->
-			<img src="resources/Images/WeddingCakes/wedding2.jpg"
+			class="gallery_item thumb lazy-img"> <!--                      style="padding-bottom: 55.97315436241611%;"-->
+			<img src="resources/Images/WeddingCakes/wedding2.jpg"	class="img-responsive"
 			alt="Wedding Cakes">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
@@ -168,12 +169,12 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 		<!--=========OTHER BAKED GOODIES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img11_original.jpg"
-			class="gallery_item thumb lazy-img pic"><!-- 			style="padding-bottom: 93.69676320272572%;" -->
-			<img src="resources/Images/OtherBakedGoodies/Bread-5.jpg"
+			class="gallery_item thumb lazy-img"><!-- 			style="padding-bottom: 93.69676320272572%;" -->
+			<img src="resources/Images/OtherBakedGoodies/Bread-5.jpg"	class="img-responsive"
 			alt="Other Baked Goodies">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
@@ -184,15 +185,15 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 	</div>
 	<!--=========THIRD ROW=========-->
 	<div class="gallery_col-3">
 		<!--=========TRUFFLES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img09_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                     style="padding-bottom: 93.69676320272572%;" -->
-			<img src="resources/Images/Truffles/Truffles2.jpg" alt="Truffles">
+			class="gallery_item thumb lazy-img"> <!--                     style="padding-bottom: 93.69676320272572%;" -->
+			<img src="resources/Images/Truffles/Truffles2.jpg" class="img-responsive" alt="Truffles">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
 					<p>
@@ -202,12 +203,12 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 		<!--=========PHOTO CAKES=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img10_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                     style="padding-bottom: 72.23168654173765%;" -->
-			<img src="resources/Images/PhotoCakes/allen.jpg" alt="Photo Cakes">
+			class="gallery_item thumb lazy-img"> <!--                     style="padding-bottom: 72.23168654173765%;" -->
+			<img src="resources/Images/PhotoCakes/allen.jpg" class="img-responsive" alt="Photo Cakes">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
 					<p>
@@ -217,13 +218,13 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 
 		<!--=========DONUTS N BAGELS=========-->
-		<a data-fancybox-group="gallery"
+		<div class="gallery pic"
 			href="images/page-1_img08_original.jpg"
-			class="gallery_item thumb lazy-img pic"> <!--                      style="padding-bottom: 96.10738255033557%;" -->
-			<img src="resources/Images/DonutsNBagels/348s.jpg"
+			class="gallery_item thumb lazy-img"> <!--                      style="padding-bottom: 96.10738255033557%;" -->
+			<img src="resources/Images/DonutsNBagels/348s.jpg"	class="img-responsive"
 			alt="Donuts N Bagels">
 			<div class="gallery_overlay">
 				<div class="gallery_caption">
@@ -234,7 +235,7 @@
 						consequat. Phasellus era nisl</p>
 				</div>
 			</div>
-		</a>
+		</div>
 	</div>
 </div>
 

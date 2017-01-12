@@ -30,4 +30,14 @@ public class UserDetailsService
 	{
 		userDetailsDAOImpl.saveBillingAddress(billingAddress);
 	}
+	
+	public UserDetails getUserByName(String userName)
+	{
+		return userDetailsDAOImpl.getUserByName(userName);
+	}
+	
+	public int checkUserName(String userName)
+	{
+		return userDetailsDAOImpl.checkUserName(userName);
+	}
 }

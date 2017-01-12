@@ -64,6 +64,24 @@ public class WebFlowHandler
 		return status;
 	}
 
+	public String checkUserName(UserDetails userDetails, MessageContext messageContext)
+	{
+		String status = "success";
+		 
+		int count = userDetailsService.checkUserName(userDetails.getUserName());
+		
+		if(count==1)
+		{
+			messageContext.addMessage(new MessageBuilder().error().source("userName").defaultText("Username Already Exists").build());
+			status ="failure";
+		}
+		else
+		{
+			status = "success";
+		}
+		return status;
+	}
+	
 	public String addShippingAddress(ShippingAddress shippingAddress)
 	{	
 		this.shippingAddress.setShippingAddressId(shippingAddress.getShippingAddressId());
