@@ -89,4 +89,22 @@ public class UserDetailsDAOImpl implements UserDetailsDAO
 		int count = userList.size();
 		return count;
 	}
+	
+	public ShippingAddress getShippingAddressByUserId(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from ShippingAddress where UserDetails_UserId ="+userId;
+		@SuppressWarnings("unchecked")
+		List<ShippingAddress> shippingAddressByUserId = session.createQuery(hql).getResultList();
+		return shippingAddressByUserId.get(0);
+	}
+	
+	public BillingAddress getBillingAddressByUserId(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from BillingAddress where UserDetails_UserId ="+userId;
+		@SuppressWarnings("unchecked")
+		List<BillingAddress> billingAddressByUserId = session.createQuery(hql).getResultList();
+		return billingAddressByUserId.get(0);
+	}
 }

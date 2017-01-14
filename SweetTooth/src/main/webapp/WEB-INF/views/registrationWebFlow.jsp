@@ -11,28 +11,52 @@ max-width: 400px;
 <p style="font-size: x-large;">USER REGISTRATION FORM</p>
 </h1>
 </div>
-<div id="contain" align="center">
-<div class="signup" align="center">
+<div align="center">
+<fieldset>
 <form:form modelAttribute="userDetails">
 <form:input type="hidden" path="userId"/>
-<form:input path="firstName" placeholder="Enter First Name"/>
-<form:errors path="firstName"/><br>
-<form:input path="lastName" placeholder="Enter Last Name"/>
-<form:errors path="lastName"/><br>
-<form:input path="contactNo" placeholder="Enter Contact Info"/>
-<form:errors path="contactNo"/><br>
-<form:input path="emailId" placeholder="Enter E-mail Id"/>
-<form:errors path="emailId"/><br>
-<form:input path="userName" placeholder="Enter Your Username"/>
-<form:errors path="userName"/><br>
-<form:password path="password" placeholder="Enter Your Password"/>
-<form:errors path="password"/><br>
+<div class='kickass_field'>
+          <form:input path="firstName" maxlength='30' required='required'/>
+          <lable>
+            <i>FIRST NAME</i>
+          </lable>
+        </div>
+<div class='kickass_field'>
+          <form:input path="lastName" maxlength='30' required='required'/>
+          <lable>
+            <i>LAST NAME</i>
+          </lable>
+        </div>
+<div class='kickass_field'>
+          <form:input path="contactNo" maxlength='30' required='required'/>
+          <lable>
+            <i>CONTACT INFO</i>
+          </lable>
+        </div>
+<div class='kickass_field'>
+          <form:input path="emailId" maxlength='30' required='required'/>
+          <lable>
+            <i>E-MAIL ID</i>
+          </lable>
+        </div>
+<div class='kickass_field'>
+          <form:input path="userName" maxlength='30' required='required'/>
+          <lable>
+            <i>USERNAME</i>
+          </lable>
+        </div>
+<div class='kickass_field'>
+          <form:password path="password" maxlength='30' required='required'/>
+          <lable>
+            <i>PASSWORD</i>
+          </lable>
+        </div>
 <tr>
 <td><input name="_eventId_submit" type="submit" value="REGISTER"/></td>
 <td><input type="reset" value="RESET"/></td>
 <!-- <td><input type="text" ng-model="find" placeholder="Search"/></td> -->
 </tr>
 </form:form>
-</div>
+</fieldset>
 </div>
 <%@ include file="Footer.jsp" %>

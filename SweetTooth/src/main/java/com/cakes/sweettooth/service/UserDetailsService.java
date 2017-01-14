@@ -40,4 +40,14 @@ public class UserDetailsService
 	{
 		return userDetailsDAOImpl.checkUserName(userName);
 	}
+	
+	public ShippingAddress getShippingAddressByUserId(int userId)
+	{
+		return userDetailsDAOImpl.getShippingAddressByUserId(userId);
+	}
+	
+	public BillingAddress getBillingAddressByUserId(int userId)
+	{
+		return userDetailsDAOImpl.getBillingAddressByUserId(userId);
+	}
 }

@@ -27,7 +27,7 @@ public class ProductService
 		return productDAOImpl.getProductList();
 	}
 	
-	public String getJsonList() 
+	public String getJsonProductList() 
 	{
 		return productDAOImpl.getJsonProductList();
 	}
@@ -47,8 +47,8 @@ public class ProductService
 		return productDAOImpl.getProductViewById(productId);
 	}
 	
-	public void deleteProductQuantity(int productId)
+	public void updateProductQuantity(int productId)
 	{
-		productDAOImpl.deleteProductQuantity(productId);
+		productDAOImpl.updateProductQuantity(productId);
 	}
 }

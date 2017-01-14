@@ -1,5 +1,7 @@
 package com.cakes.sweettooth.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,9 +12,10 @@ import javax.persistence.ManyToOne;
 import com.google.gson.annotations.Expose;
 
 @Entity
-public class CartItem 
+public class CartItem implements Serializable
 {
 	@Id
+	@Expose
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cartItemId;
 	

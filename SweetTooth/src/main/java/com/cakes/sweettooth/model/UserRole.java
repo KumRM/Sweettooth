@@ -1,16 +1,18 @@
 package com.cakes.sweettooth.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class UserRole 
+public class UserRole implements Serializable
 {
 	@Id
-	private int roleId;
 	private int userId;
+	private int roleId;
 	
 	@OneToOne
 	@JoinColumn(name="userId", nullable=false, insertable=false, updatable=false)

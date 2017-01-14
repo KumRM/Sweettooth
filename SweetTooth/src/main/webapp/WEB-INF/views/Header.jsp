@@ -69,7 +69,7 @@
 					<li class="col-sm-3">
 					<c:forEach items="${categoryListDrop}" var="category">
 						<ul class="dropdown-header">
-						<li>${category.categoryName}</li>
+						<li href="#">${category.categoryName}</li>
 						<c:forEach items="${category.subCategorySet}" var="subCategory">
 						<li><a>${subCategory.subCategoryName}</a></li>
 						</c:forEach>
@@ -110,26 +110,26 @@
         </button>
         <button type="button" class="btn btn-default"><a href="#">Customers</a></button> 
         <button type="button" class="btn btn-default"><a href="#">Talk To Us</a></button>
-        <c:if test="${!empty pageContext.request.userPrincipal}">
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <button type="button" class="btn btn-default dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms<b class="caret"></b></a>
-        <ul class="dropdown-menu">
-			<li><a href="CategoryForm">CATEGORY</a></li>
-        	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li>
-        	<li><a href="BakerForm">BAKER</a></li>
-        	<li><a href="ProductForm">PRODUCT</a></li>
-        </ul>	        
-        </button>
-        </sec:authorize>
-        </c:if>
+<%--         <c:if test="${!empty pageContext.request.userPrincipal}"> --%>
+<!--         <sec:authorize access="hasRole('ROLE_ADMIN')"> -->
+<!--         <button type="button" class="btn btn-default dropdown"> -->
+<!--         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms<b class="caret"></b></a> -->
+<!--         <ul class="dropdown-menu"> -->
+<!-- 			<li><a href="CategoryForm">CATEGORY</a></li> -->
+<!--         	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li> -->
+<!--         	<li><a href="BakerForm">BAKER</a></li> -->
+<!--         	<li><a href="ProductForm">PRODUCT</a></li> -->
+<!--         </ul>	         -->
+<!--         </button> -->
+<!--         </sec:authorize> -->
+<%--         </c:if> --%>
         <span style="font-size: 50px;  background: url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;"><input id="demo-2" type="search"/></span>
       	</li>
       </ul> 
           <ul class="nav navbar-nav navbar-right">
         <button type="button" class="btn btn-default dropdown">
         <c:if test="${empty pageContext.request.userPrincipal}">
-        <a href="RegistrationForm"><span class="glyphicon glyphicon-user"></span>Sign Up</a>
+        <a href="reg"><span class="glyphicon glyphicon-user"></span>Sign Up</a>
         </c:if>
         <c:if test="${!empty pageContext.request.userPrincipal}">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>${pageContext.request.userPrincipal.name}<b class="caret"></b></a>
@@ -139,6 +139,9 @@
         	<li><a href="#">YOUR BOX</a></li>
         	<li><a href="#">PRODUCT</a></li>
         </ul>
+<!--         <button type="button" class="btn btn-default"> -->
+<!--         <a><span class="glyphicon glyphicon-gift"></span></a> -->
+<!--         </button> -->
         </c:if>
         </button>
         <button type="button" class="btn btn-default dropdown">
@@ -153,6 +156,19 @@
         </ul>
         </c:if>
         </button>
+        <c:if test="${!empty pageContext.request.userPrincipal}">
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <button type="button" class="btn btn-default dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+			<li><a href="CategoryForm">CATEGORY</a></li>
+        	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li>
+        	<li><a href="BakerForm">BAKER</a></li>
+        	<li><a href="ProductForm">PRODUCT</a></li>
+        </ul>	        
+        </button>
+        </sec:authorize>
+        </c:if>
       </ul>
     </div>
 </div>

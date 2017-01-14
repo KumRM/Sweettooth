@@ -21,8 +21,13 @@
 	<action-state id="validate">
 	<evaluate expression="webFlowHandler.validateUser(userDetails, messageContext)"/>
 	<transition on="failure" to="start"/>
-	<transition on="success" to="startShippingAddress"/>
+	<transition on="success" to="confirmDetails"/>
 	</action-state>
+	
+	<view-state id="confirmDetails" model="userDetails" view="confirmDetailsWebFlow">
+	<transition on="edit" to="start"/>
+	<transition on="submit" to="startShippingAddress"/>
+	</view-state>
 	
 	<view-state id="startShippingAddress" model="shippingAddress" view="shippingAddressWebFlow">
 	<transition on="submit" to="addShippingAddress"/>

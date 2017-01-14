@@ -10,14 +10,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cakes.sweettooth.model.CartItem;
 import com.cakes.sweettooth.model.Product;
-import com.cakes.sweettooth.model.UserDetails;
 import com.cakes.sweettooth.service.CartItemService;
 import com.cakes.sweettooth.service.ProductService;
 import com.cakes.sweettooth.service.UserDetailsService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Controller
 public class CartItemController 
@@ -30,7 +32,7 @@ public class CartItemController
 	@Autowired
 	ProductService productService;
 	@RequestMapping("/buyNow-{productId}")
-	public String buyNow(Model model, @PathVariable("productId") int productId, @ModelAttribute("cartItem") CartItem cartItem, @RequestParam("userId")int userId,Product product, HttpSession httpSession)
+	public String buyNow(Model model, @PathVariable("productId") int productId, @ModelAttribute("cartItem") CartItem cartItem, @RequestParam("userId")int userId, HttpSession httpSession)
 	{
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String userName = authentication.getName();
@@ -48,15 +50,37 @@ public class CartItemController
 		
 		cartItemService.addCartItem(cartItem);
 		
-		productService.deleteProductQuantity(productId);
+		productService.updateProductQuantity(productId);
+		
 		httpSession.setAttribute("cartItemId", cartItem.getCartItemId());
 		int cartItemId = (Integer) httpSession.getAttribute("cartItemId");
-		return "/cartList-"+cartItemId;
+		return "redirect:/CartList-"+cartItemId;
 	}
 	
-	@RequestMapping("/cartList-{cartItemId}")
-	public String cartList()
+	@RequestMapping("/CartList-{cartItemId}")
+	public String cartList(Model model, HttpSession httpSession)
 	{
-		return "";
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String userName = authentication.getName();
+		int userId=userDetailsService.getUserByName(userName).getUserId();
+		
+		httpSession.setAttribute("userId", userId);
+		int cartItemId = (Integer) httpSession.getAttribute("cartItemId");
+		
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String cartItemList = gson.toJson(cartItemService.getCartListById(cartItemId));
+		model.addAttribute("cartList", cartItemList);
+		return "/CartList";
+	}
+	
+	@RequestMapping("/checkout")
+	public String checkout(@RequestParam("userId")int userId, HttpSession httpSession)
+	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String userName = authentication.getName();
+		userId=userDetailsService.getUserByName(userName).getUserId();
+		
+//		httpSession.setAttribute("userId", userId);
+		return "redirect:/cart?userId="+userId;
 	}
 }

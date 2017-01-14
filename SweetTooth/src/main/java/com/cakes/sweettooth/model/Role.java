@@ -1,12 +1,14 @@
 package com.cakes.sweettooth.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Role 
+public class Role implements Serializable
 {
 	@Id
 	private int roleId;

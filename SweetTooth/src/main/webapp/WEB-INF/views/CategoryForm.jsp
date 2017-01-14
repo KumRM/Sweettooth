@@ -28,23 +28,29 @@ max-width: 750px;
 <p style="font-size: x-large;">CATEGORY REGISTRATION FORM</p>
 </h1>
 </div>
-<div ng-app="app" ng-controller="myCtrl" align="left">
-<div align="center">
-<fieldset>
+<div ng-app="app" ng-controller="myCtrl" align="center">
+<div class="signup" align="center">
+<!-- <fieldset> -->
 <form:form modelAttribute="category" action="addCategory">
 <form:input type="hidden" path="categoryId"/>
-<div class='kickass_field'>
-          <form:input path="categoryName" maxlength='30' required='required'/>
-          <lable>
-            <i>CATEGORY NAME</i>
-          </lable>
-        </div>
-<div class='kickass_field'>        
-			<form:input path="categoryDescription" maxlength='30' required='required'/>
-          <lable>
-            <i>CATEGORY DESCRIPTION</i>
-          </lable>
-        </div>
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="categoryName" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>CATEGORY NAME</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'>         -->
+<%-- 			<form:input path="categoryDescription" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>CATEGORY DESCRIPTION</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<form:errors path="categoryName"/>
+<br/>
+<form:input path="categoryName" placeholder="Enter Category Name"/>
+<form:errors path="categoryDescription"/>
+<br/>
+<form:input path="categoryDescription" placeholder="Enter Category Description"/>
 <c:if test="${!empty category.categoryName && !empty category.categoryDescription}">
 <input type="submit" value="Edit Category"/>
 </c:if>
@@ -53,7 +59,7 @@ max-width: 750px;
 <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/>
 </c:if>
 </form:form>
-</fieldset>
+<!-- </fieldset> -->
 </div>
 <div align="center" class="table-responsive">
 <table class="table table-hover table-condensed table-sm" id="categoryTable">

@@ -1,5 +1,5 @@
 <%@ include file="Header.jsp"%>
-
+<div ng-app="app" ng-controller="myCtrl">
 <!--=======CODE FOR SLIDER=================-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -78,7 +78,8 @@
 
 <!--=============DECORATION/SEPARATION=================-->
 
-<div class="decoration"><p>oooooooooooooooooooooooooo</p>
+<div class="decoration">
+<h6>oooooooooooooooooo</h6>
 	<h2><em>Our</em><i>Products</i></h2>
 </div>
 
@@ -239,12 +240,49 @@
 	</div>
 </div>
 
+
+
+
+<!--=============BESTSELLERS=================-->
+
+<div class="decoration">
+<h6>oooooooooooooooooo</h6>
+	<h2><em>Our Best</em></h2>
+</div>
+
+<!--=================DYNAMIC PRODUCT DISPLAY=========-->
+
+<div class="row">
+        <div ng-repeat="jPD in jsonProductData" class="col-md-4">
+            <div class="product-item">
+              <div class="pic">
+                <img src="http://keenthemes.com/assets/bootsnipp/k1.jpg" class="img-responsive" alt="Berry Lace Dress">
+                <div>
+                  <a href="#" class="btn">Zoom</a>
+                  <a href="#" class="btn">View</a>
+                </div>
+              </div>
+              <h3><a href="shop-item.html">{{jPD.productName}}</a></h3>
+              <div class="pi-price">$29.00</div>
+              <a href="javascript:;" class="btn add2cart">Add to cart</a>
+              <div class="sticker sticker-new"></div>
+            </div>
+        </div>
+    </div>
+
+
 <!--=============DECORATION/SEPARATION=================-->
 <div class="decoration">
 <img style="height: 100pt; width: 100pt" alt="SweetTooth" src="resources/Images/logo.png"/>
 </div>
 
-
+<script type="text/javascript">
+var app =  angular.module('app',[]);
+app.controller("myCtrl",function ($scope){
+	$scope.jsonProductData = ${productjson};
+});
+</script>
+</div>
 <!--=============FOOTER=================-->
 
 <%@ include file="Footer.jsp"%>

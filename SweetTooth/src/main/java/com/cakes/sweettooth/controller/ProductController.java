@@ -49,7 +49,7 @@ public class ProductController
 		model.addAttribute("categoryList", categoryService.getList());
 		model.addAttribute("subCategoryList", subCategoryService.getList());
 		model.addAttribute("bakerList", bakerService.getList());
-		model.addAttribute("productList", productService.getJsonList());
+		model.addAttribute("productList", productService.getJsonProductList());
 //		model.addAttribute("productList", productService.getProductList());
 		return "/ProductForm";
 	}
@@ -62,7 +62,7 @@ public class ProductController
 			model.addAttribute("categoryList", categoryService.getList());
 			model.addAttribute("subCategoryList", subCategoryService.getList());
 			model.addAttribute("bakerList", bakerService.getList());
-			model.addAttribute("productList", productService.getJsonList());
+			model.addAttribute("productList", productService.getJsonProductList());
 			return "/ProductForm";
 		}
 		else

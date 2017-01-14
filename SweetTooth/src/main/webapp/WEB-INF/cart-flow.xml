@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<var name="cartDetails" class="com.cakes.sweettooth.model.CartDetails"/>                          
+	<var name="shippingAddress" class="com.cakes.sweettooth.model.ShippingAddress"/>
+	<var name="billingAddress" class="com.cakes.sweettooth.model.BillingAddress"/>	
+	<var name="cartItem" class="com.cakes.sweettooth.model.CartItem"/>	
+	
+		<on-start>
+		<evaluate expression="cartFlowHandler.initFlow()" result="flowScope.cartDetails"/>
+	</on-start>
+	
+	<action-state id="cart">
+		<evaluate expression="userDetailsService.getShippingAddressByUserId(externalContext.sessionMap.userId)" result="flowScope.shippingAddress"/>
+		<transition to="start"/>
+	</action-state>
+	
+	<view-state id="start" model="shippingAddress" view="confirmShippingAddress">
+	<transition on="edit" to="addShipping"/>
+	<transition on="submit" to="startBillingAddress"/>
+	</view-state>
+	
+	<view-state id="addShipping" model="shippingAddress" view="shippingAddressWebFlow">
+	<transition on="submit" to="validateShipping"/>
+	</view-state>
+	
+	<action-state id="validateShipping">
+		<evaluate expression="webFlowHandler.addShippingAddress(shippingAddress)"/>
+		<transition on="failure" to="addShipping"/>
+	<transition on="success" to="start"/>
+	</action-state>
+	
+	<action-state id="startBillingAddress">
+		<evaluate expression="userDetailsService.getBillingAddressByUserId(externalContext.sessionMap.userId)" result="flowScope.billingAddress"/>
+		<transition to="confirmBillingAddress"/>
+	</action-state>
+	
+	
+	<view-state id="confirmBillingAddress" view="confirmBillingAddress" model="billingAddress">
+	<transition on="edit" to="addBilling"/>
+	<transition on="submit" to="payment"/>
+	</view-state>
+
+	<view-state id="addBilling" model="billingAddress" view="billingAddressWebFlow">
+	<transition on="submit" to="validateBilling"/>
+	</view-state>
+	
+	<action-state id="validateBilling">
+		<evaluate expression="webFlowHandler.addBillingAddress(billingAddress)"/>
+		<transition on="failure" to="addBilling"/>
+	<transition on="success" to="confirmBillingAddress"/>
+	</action-state>	
+	
+	<view-state id="payment" view="payment" model="cartItem">
+	<transition on="submit" to="flag"/>
+	</view-state>
+	
+	<action-state id="flag">
+		<evaluate expression="cartItemService.updateFlag(externalContext.sessionMap.cartItemId)" result="flowScope.cartItem"/>
+		<transition to="buyNowDone"/>
+	</action-state>	
+	
+	<end-state id="buyNowDone" view="buyNowSuccess">
+	</end-state>
+</flow>

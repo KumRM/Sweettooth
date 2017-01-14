@@ -11,22 +11,26 @@
 <p style="font-size: x-large;">USER LOGIN FORM</p>
 </h1>
 </div>
-<div id="contain" align="center">
-<div class="signup" align="center">
+<div align="center">
+<fieldset>
 <form method="post" action="perform_login">
+<!-- <div class='kickass_field'> -->
+<!--           <input type="text" name="username" maxlength='30' required='required'/> -->
+<!--           <lable> -->
+<!--             <i>USERNAME</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<!--           <input type="password" name="password" maxlength='30' required='required'/> -->
+<!--           <lable> -->
+<!--             <i>PASSWORD</i> -->
+<!--           </lable> -->
+<!--         </div> -->
 <input type="text" name="username" placeholder="Enter Your Username"/>
 <input type="password" name="password" placeholder="Enter Your Password"/>
 <input type="submit" value="LOGIN"/>
 <input type="reset" value="RESET"/>
 </form>
-<%-- <c:if test="${!empty category.categoryName && !empty category.categoryDescription}"> --%>
-<!-- <input type="submit" value="Edit Category"/> -->
-<%-- </c:if> --%>
-<%-- <c:if test="${empty category.categoryName || empty category.categoryDescription}"> --%>
-<!-- <input type="submit" value="Add Category"/> -->
-<!-- <input type="button" id="buttonToggle" value="Show List" onclick="toggle()"/> -->
-<%-- </c:if> --%>
-<!-- <td><input type="text" ng-model="find" placeholder="Search"/></td> -->
-</div>
+</fieldset>
 </div>
 <%@ include file="Footer.jsp"%>

@@ -18,4 +18,14 @@ public class CartItemService
 	{
 		cartItemDAOImpl.addCartItem(cartItem);
 	}
+	
+	public CartItem getCartListById(int cartItemId)
+	{
+		return cartItemDAOImpl.getCartListById(cartItemId);
+	}
+	
+	public void updateFlag(int cartItemId)
+	{
+		cartItemDAOImpl.updateFlag(cartItemId);
+	}
 }

@@ -63,7 +63,7 @@ public class ProductDAOImpl implements ProductDAO
 		return productViewById.get(0);
 	}
 	
-	public void deleteProductQuantity(int productId)
+	public void updateProductQuantity(int productId)
 	{
 		String hql = "update Product set productQuantity = productQuantity-1 where productId =" + productId;
 		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
