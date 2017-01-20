@@ -43,14 +43,17 @@
 						<h4 class="price">current price: <span>{{p.productPrice}}</span></h4>
 						<h5 class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></h5>
 						<h5 class="action">
-							<button class="btn btn-warning fa fa-heart" type="button"></button>
+							<a href="addToWishList-{{p.productId}}?userId=1" class="btn btn-warning fa fa-heart"></a>
 							<button class="btn btn-success">eggless</button>
 							<button class="btn btn-danger">egg</button>
 						</h5>
-						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
-							<button class="add-to-cart btn btn-default" type="button"><a href="buyNow-{{p.productId}}?userId=1">buy now</a></button>
+						<form:form modelAttribute="cartItem" action="addToCart-${sessionScope.productId}?userId=1">
+						<form:input path="productQuantity" type="number" value="1"/>
+						<div>
+							<input class="add-to-cart" type="submit" value="add to cart"><span class="glyphicon glyphicon-gift"></span></input>
+							<button class="add-to-cart" type="button"><a href="buyNow-{{p.productId}}?userId=1">buy now</a></button>
 						</div>
+						</form:form>
 					</div>
 				</div>
 				</div>

@@ -30,9 +30,24 @@ public class CartItemDAOImpl implements CartItemDAO
 		return cartListById.get(0);
 	}
 	
+	public List<CartItem> getCartList(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+		List<CartItem> addToCartList = session.createQuery("from CartItem where userId="+userId+"and flag=false").getResultList();
+		return addToCartList; 
+	}
+	
 	public void updateFlag(int cartItemId)
 	{
 		String hql="update CartItem set flag=true where cartItemId="+cartItemId;
 		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+	}
+
+	public void deleteCartItem(int cartItemId) 
+	{
+		CartItem cartItemToDelete = new CartItem();
+		cartItemToDelete.setCartItemId(cartItemId);
+		sessionFactory.getCurrentSession().delete(cartItemToDelete);
 	}
 }

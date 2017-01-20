@@ -256,15 +256,14 @@
         <div ng-repeat="jPD in jsonProductData" class="col-md-4">
             <div class="product-item">
               <div class="pic">
-                <img src="http://keenthemes.com/assets/bootsnipp/k1.jpg" class="img-responsive" alt="Berry Lace Dress">
-                <div>
-                  <a href="#" class="btn">Zoom</a>
-                  <a href="#" class="btn">View</a>
-                </div>
+                <img src="resources/Images/{{jPD.productId}}.jpg" class="img-responsive" alt="Berry Lace Dress">
               </div>
               <h3><a href="shop-item.html">{{jPD.productName}}</a></h3>
-              <div class="pi-price">$29.00</div>
-              <a href="javascript:;" class="btn add2cart">Add to cart</a>
+              <div class="pi-price">{{jPD.productPrice}}</div>
+              <a href="addToWishList-{{jPD.productId}}?userId=1" class="btn btn-warning fa fa-heart"></a>
+              <a href="viewProduct-{{jPD.productId}}" class="btn add2cart">View</a>
+              <a href="buyNow-{{jPD.productId}}?userId=1" class="btn add2cart">buy now</a>
+              <a href="addToCart-{{jPD.productId}}?userId=1" class="btn add2cart">Add to cart</a>
               <div class="sticker sticker-new"></div>
             </div>
         </div>

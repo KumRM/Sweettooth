@@ -13,7 +13,7 @@
 </div>
 <div align="center">
 <fieldset>
-<form method="post" action="perform_login">
+<form:form method="post" action="perform_login">
 <!-- <div class='kickass_field'> -->
 <!--           <input type="text" name="username" maxlength='30' required='required'/> -->
 <!--           <lable> -->
@@ -30,7 +30,7 @@
 <input type="password" name="password" placeholder="Enter Your Password"/>
 <input type="submit" value="LOGIN"/>
 <input type="reset" value="RESET"/>
-</form>
+</form:form>
 </fieldset>
 </div>
 <%@ include file="Footer.jsp"%>

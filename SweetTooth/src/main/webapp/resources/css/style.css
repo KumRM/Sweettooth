@@ -13,15 +13,15 @@ body {
     border-top-right-radius:4px;
 }
 .navbar-default .navbar-nav>li>a {
-    width:200px;
-    font-weight:bold;
+    width:90px;
+    font-weight:bolder;
 }
 .mega-dropdown {
   position: static !important;
   width:100%;
 }
 .mega-dropdown-menu {
-    padding: 10px 0px;
+    padding: 0px 0px;
     width: 100%;
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -61,7 +61,7 @@ body {
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
-  line-height: 1.428571429;
+  line-height: 2;
   color: #999;
   white-spac
   e: normal;
@@ -69,7 +69,7 @@ body {
 .mega-dropdown-menu > li ul > li > a:hover,
 .mega-dropdown-menu > li ul > li > a:focus {
   text-decoration: none;
-  color: #444;
+  color: #0000ff;
   background-color: #f5f5f5;
 }
 .mega-dropdown-menu .dropdown-header {
@@ -97,6 +97,8 @@ body {
 /*   	height: 200pt; */
   	width: 100%;
   }
+  
+  
   
   
   
@@ -450,6 +452,49 @@ display: block;
 }
 
 
+/* ====================CART DROPDOWN====================== */
+
+ul.dropdown-cart{
+    min-width:250px;
+}
+ul.dropdown-cart li .item{
+    display:block;
+    padding:3px 10px;
+    margin: 3px 0;
+}
+ul.dropdown-cart li .item:hover{
+    background-color:#f3f3f3;
+}
+ul.dropdown-cart li .item:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+    float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+    float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+    margin-left:10px;   
+}
+ul.dropdown-cart li .item-left span.item-info span{
+    display:block;
+}
+ul.dropdown-cart li .item-right{
+    float:right;
+}
+ul.dropdown-cart li .item-right button{
+    margin-top:14px;
+}
+
+
 
 /*==================BRAND======================*/
 
@@ -611,7 +656,7 @@ body
 /* 	background: #c0c0c0; */
 //BACKGROUND COLOR
 	color: #666;
-	font: 90%/180% Arial, Helvetica, sans-serif;
+	font: Arial, Helvetica, sans-serif;
 	width: 100%;
 	max-width: 100%;
 /* 	margin: 0 auto; */
@@ -742,7 +787,7 @@ input[type=search]:focus
 [type=text] {
   display: block;
   margin: 0 auto;
-  width: 80%;
+  width: 50%;
   border: 0;
   border-bottom: 1px solid rgba(0,0,0,.2);
   height: 45px;
@@ -755,7 +800,7 @@ input[type=search]:focus
 [type=password] {
   display: block;
   margin: 0 auto;
-  width: 80%;
+  width: 50%;
   border: 0;
   border-bottom: 1px solid rgba(0,0,0,.2);
   height: 45px;
@@ -767,7 +812,7 @@ input[type=search]:focus
 
 [type=submit] {
   margin-top: 25px;
-  width: 80%;
+  width: 30%;
   border: 0;
   background-color: #53CACE;
   border-radius: 5px;
@@ -779,7 +824,7 @@ input[type=search]:focus
 
 [type=reset] {
   margin-top: 25px;
-  width: 80%;
+  width: 30%;
   border: 0;
   background-color: #53CACE;
   border-radius: 5px;
@@ -791,7 +836,7 @@ input[type=search]:focus
 
 #buttonToggle {
   margin-top: 25px;
-  width: 80%;
+  width: 30%;
   border: 0;
   background-color: #53CACE;
   border-radius: 5px;

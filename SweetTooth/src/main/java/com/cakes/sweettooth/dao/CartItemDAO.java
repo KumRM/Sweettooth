@@ -5,4 +5,6 @@ import com.cakes.sweettooth.model.CartItem;
 public interface CartItemDAO {
 
 	public void addCartItem(CartItem cartItem);
+	
+	public void deleteCartItem(int cartItemId);
 }

@@ -23,7 +23,7 @@
 	<transition on="failure" to="start"/>
 	<transition on="success" to="confirmDetails"/>
 	</action-state>
-	
+
 	<view-state id="confirmDetails" model="userDetails" view="confirmDetailsWebFlow">
 	<transition on="edit" to="start"/>
 	<transition on="submit" to="startShippingAddress"/>

@@ -15,42 +15,55 @@ max-width: 400px;
 <fieldset>
 <form:form modelAttribute="userDetails">
 <form:input type="hidden" path="userId"/>
-<div class='kickass_field'>
-          <form:input path="firstName" maxlength='30' required='required'/>
-          <lable>
-            <i>FIRST NAME</i>
-          </lable>
-        </div>
-<div class='kickass_field'>
-          <form:input path="lastName" maxlength='30' required='required'/>
-          <lable>
-            <i>LAST NAME</i>
-          </lable>
-        </div>
-<div class='kickass_field'>
-          <form:input path="contactNo" maxlength='30' required='required'/>
-          <lable>
-            <i>CONTACT INFO</i>
-          </lable>
-        </div>
-<div class='kickass_field'>
-          <form:input path="emailId" maxlength='30' required='required'/>
-          <lable>
-            <i>E-MAIL ID</i>
-          </lable>
-        </div>
-<div class='kickass_field'>
-          <form:input path="userName" maxlength='30' required='required'/>
-          <lable>
-            <i>USERNAME</i>
-          </lable>
-        </div>
-<div class='kickass_field'>
-          <form:password path="password" maxlength='30' required='required'/>
-          <lable>
-            <i>PASSWORD</i>
-          </lable>
-        </div>
+<form:errors path="firstName"/>
+<form:input path="firstName" placeholder="Enter Your First Name"/>
+<form:errors path="lastName"/>
+<form:input path="lastName" placeholder="Enter Your Last Name"/>
+<form:errors path="contactNo"/>
+<form:input path="contactNo" placeholder="Enter Your Contact Info"/>
+<form:errors path="emailId"/>
+<form:input path="emailId" placeholder="Enter Your E-mail Id"/>
+<form:errors path="userName"/>
+<form:input path="userName" placeholder="Enter Your UserName"/>
+<form:errors path="password"/>
+<form:password path="password" placeholder="Enter Your Password"/>
+
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="firstName" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>FIRST NAME</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="lastName" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>LAST NAME</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="contactNo" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>CONTACT INFO</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="emailId" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>E-MAIL ID</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="userName" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>USERNAME</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<%--           <form:password path="password" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>PASSWORD</i> -->
+<!--           </lable> -->
+<!--         </div> -->
 <tr>
 <td><input name="_eventId_submit" type="submit" value="REGISTER"/></td>
 <td><input type="reset" value="RESET"/></td>

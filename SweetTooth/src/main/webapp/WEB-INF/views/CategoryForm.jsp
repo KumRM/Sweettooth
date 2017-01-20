@@ -23,13 +23,14 @@ display: none;
 max-width: 750px;
 }
 </style>
-<div align="center">
-<h1>
-<p style="font-size: x-large;">CATEGORY REGISTRATION FORM</p>
+<div class="jumbotron">
+<!-- style="background-image: url('resources/Images/background-with-chocolate-cake-macarons.jpg');" -->
+<h1 align="center">
+<p style="font-size: xx-large;font-weight:900; font-family: sans-serif; color: purple;">CATEGORY REGISTRATION FORM</p>
 </h1>
 </div>
 <div ng-app="app" ng-controller="myCtrl" align="center">
-<div class="signup" align="center">
+<div align="center">
 <!-- <fieldset> -->
 <form:form modelAttribute="category" action="addCategory">
 <form:input type="hidden" path="categoryId"/>
@@ -46,10 +47,8 @@ max-width: 750px;
 <!--           </lable> -->
 <!--         </div> -->
 <form:errors path="categoryName"/>
-<br/>
 <form:input path="categoryName" placeholder="Enter Category Name"/>
 <form:errors path="categoryDescription"/>
-<br/>
 <form:input path="categoryDescription" placeholder="Enter Category Description"/>
 <c:if test="${!empty category.categoryName && !empty category.categoryDescription}">
 <input type="submit" value="Edit Category"/>
@@ -98,8 +97,8 @@ max-width: 750px;
 <td>{{cList.categoryId}}</td>
 <td>{{cList.categoryName}}</td>
 <td>{{cList.categoryDescription}}</td>
-<td><a href="deleteCategory-{{cList.categoryId}}"><i class="fa fa-times"></i></a></td>
-<td><a href="editCategory-{{cList.categoryId}}"><i class="fa fa-pencil"></i></a></td>
+<td><a href="deleteCategory-{{cList.categoryId}}"><span class="glyphicon glyphicon-trash"></span></a></td>
+<td><a href="editCategory-{{cList.categoryId}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
 </tr>
 </table>
 </div>

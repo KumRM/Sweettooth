@@ -23,9 +23,9 @@ display: none;
 max-width: 750px;
 }
 </style>
-<div align="center">
-<h1>
-<p style="font-size: x-large;">SUB-CATEGORY REGISTRATION FORM</p>
+<div class="jumbotron">
+<h1 align="center">
+<p style="font-size: xx-large;font-weight:900; font-family: sans-serif; color: purple;">SUB-CATEGORY REGISTRATION FORM</p>
 </h1>
 </div>
 <div ng-app="app" ng-controller="myCtrl" align="left">
@@ -33,18 +33,22 @@ max-width: 750px;
 <fieldset>
 <form:form modelAttribute="subCategory" action="addSubCategory">
 <form:input type="hidden" path="subCategoryId"/>
-<div class='kickass_field'>
-          <form:input path="subCategoryName" maxlength='30' required='required'/>
-          <lable>
-            <i>SUB-CATEGORY NAME</i>
-          </lable>
-        </div>
-<div class='kickass_field'>        
-			<form:input path="subCategoryDescription" maxlength='30' required='required'/>
-          <lable>
-            <i>SUB-CATEGORY DESCRIPTION</i>
-          </lable>
-        </div>
+<form:errors path="subCategoryName"/>
+<form:input path="subCategoryName" placeholder="Enter Sub-Category Name"/>
+<form:errors path="subCategoryDescription"/>
+<form:input path="subCategoryDescription" placeholder="Enter Sub-Category Description"/>
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="subCategoryName" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>SUB-CATEGORY NAME</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'>         -->
+<%-- 			<form:input path="subCategoryDescription" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>SUB-CATEGORY DESCRIPTION</i> -->
+<!--           </lable> -->
+<!--         </div> -->
 <div>        
 <form:select path="category.categoryName" items="${categoryList}" itemValue="categoryName" itemLabel="categoryName"/>
 </div>
@@ -95,8 +99,8 @@ max-width: 750px;
 <td>{{scList.subCategoryId}}</td>
 <td>{{scList.subCategoryName}}</td>
 <td>{{scList.subCategoryDescription}}</td>
-<td><a href="deleteSubCategory-{{scList.subCategoryId}}"><i class="fa fa-times"></i></a></td>
-<td><a href="editSubCategory-{{scList.subCategoryId}}"><i class="fa fa-pencil"></i></a></td>
+<td><a href="deleteSubCategory-{{scList.subCategoryId}}"><span class="glyphicon glyphicon-trash"></span></a></td>
+<td><a href="editSubCategory-{{scList.subCategoryId}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
 </tr>
 </table>
 </div>

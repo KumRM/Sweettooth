@@ -31,6 +31,19 @@ public class WebFlowHandler
 	{
 		String status = "success";
 		
+		int count = userDetailsService.checkUserName(userDetails.getUserName());
+		int emailcount = userDetailsService.checkEmail(userDetails.getEmailId());
+		
+		if(count==1)
+		{
+			messageContext.addMessage(new MessageBuilder().error().source("userName").defaultText("Username Already Exists").build());
+			status ="failure";
+		}
+		if(emailcount==1)
+		{
+			messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("E-Mail Already Exists").build());
+			status ="failure";
+		}
 		if(userDetails.getFirstName().isEmpty())
 		{	
 			messageContext.addMessage(new MessageBuilder().error().source("firstName").defaultText("First Name Can't Be Empty").build());
@@ -41,22 +54,22 @@ public class WebFlowHandler
 			messageContext.addMessage(new MessageBuilder().error().source("lastName").defaultText("Last Name Can't Be Empty").build());
 			status="failure";
 		}
-		if(userDetails.getLastName().isEmpty())
+		if(userDetails.getContactNo().isEmpty())
 		{	
 			messageContext.addMessage(new MessageBuilder().error().source("contactNo").defaultText("Contact Info Can't Be Empty").build());
 			status="failure";
 		}
-		if(userDetails.getLastName().isEmpty())
+		if(userDetails.getEmailId().isEmpty())
 		{	
 			messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("E-mail Id Can't Be Empty").build());
 			status="failure";
 		}
-		if(userDetails.getLastName().isEmpty())
+		if(userDetails.getUserName().isEmpty())
 		{	
 			messageContext.addMessage(new MessageBuilder().error().source("userName").defaultText("Username Can't Be Empty").build());
 			status="failure";
 		}
-		if(userDetails.getLastName().isEmpty())
+		if(userDetails.getPassword().isEmpty())
 		{	
 			messageContext.addMessage(new MessageBuilder().error().source("password").defaultText("Password Can't Be Empty").build());
 			status="failure";
@@ -64,23 +77,16 @@ public class WebFlowHandler
 		return status;
 	}
 
-	public String checkUserName(UserDetails userDetails, MessageContext messageContext)
-	{
-		String status = "success";
-		 
-		int count = userDetailsService.checkUserName(userDetails.getUserName());
-		
-		if(count==1)
-		{
-			messageContext.addMessage(new MessageBuilder().error().source("userName").defaultText("Username Already Exists").build());
-			status ="failure";
-		}
-		else
-		{
-			status = "success";
-		}
-		return status;
-	}
+//	public String checkUserName(UserDetails userDetails, MessageContext messageContext)
+//	{
+//		String status = "success";
+//		
+//		return status;
+//		{
+//			status = "success";
+//		}
+//		return status;
+//	}
 	
 	public String addShippingAddress(ShippingAddress shippingAddress)
 	{	

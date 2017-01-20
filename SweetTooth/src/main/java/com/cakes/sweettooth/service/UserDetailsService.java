@@ -41,6 +41,11 @@ public class UserDetailsService
 		return userDetailsDAOImpl.checkUserName(userName);
 	}
 	
+	public int checkEmail(String emailId)
+	{
+		return userDetailsDAOImpl.checkEmail(emailId);
+	}
+	
 	public ShippingAddress getShippingAddressByUserId(int userId)
 	{
 		return userDetailsDAOImpl.getShippingAddressByUserId(userId);

@@ -27,6 +27,7 @@ import com.cakes.sweettooth.model.SubCategory;
 import com.cakes.sweettooth.model.User;
 import com.cakes.sweettooth.model.UserDetails;
 import com.cakes.sweettooth.model.UserRole;
+import com.cakes.sweettooth.model.WishList;
 
 @Configuration
 @ComponentScan("com.cakes.sweettooth")
@@ -87,6 +88,7 @@ public class HibernateConfig
 		sessionBuilder.addAnnotatedClass(UserRole.class);
 		sessionBuilder.addAnnotatedClass(CartItem.class);
 		sessionBuilder.addAnnotatedClass(ProductView.class);
+		sessionBuilder.addAnnotatedClass(WishList.class);
 		
 		return sessionBuilder.buildSessionFactory();
 	}

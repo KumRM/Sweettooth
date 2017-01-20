@@ -23,51 +23,62 @@ display: none;
 max-width:1150px;
 }
 </style>
-<div align="center">
-<h1>
-<p style="font-size: x-large;">PRODUCT REGISTRATION FORM</p>
+<div class="jumbotron">
+<!-- style="background-image: url('resources/Images/background-with-chocolate-cake-macarons.jpg');" -->
+<h1 align="center">
+<p style="font-size: xx-large;font-weight:900; font-family: sans-serif; color: purple;">PRODUCT REGISTRATION FORM</p>
 </h1>
 </div>
 <div ng-app="app" ng-controller="myCtrl" align="left">
 <div align="center">
 <form:form enctype="multipart/form-data" modelAttribute="product" action="addProduct">
 <form:input type="hidden" path="productId"/>
-<div class='kickass_field'>
-          <form:input path="productName" maxlength='30' required='required'/>
-          <lable>
-            <i>PRODUCT NAME</i>
-          </lable>
-        </div>
-<div class='kickass_field'>        
-			<form:input path="productDescription" maxlength='30' required='required'/>
-          <lable>
-            <i>PRODUCT DESCRIPTION</i>
-          </lable>
-        </div>
-<div class='kickass_field'>
-          <form:input path="productPrice" maxlength='30' required='required'/>
-          <lable>
-            <i>PRODUCT PRICE</i>
-          </lable>
-        </div>
-<div class='kickass_field'>        
-			<form:input path="productDiscount" maxlength='30' required='required'/>
-          <lable>
-            <i>PRODUCT DISCOUNT</i>
-          </lable>
-        </div>
-<div class='kickass_field'>
-          <form:input path="productQuantity" maxlength='30' required='required'/>
-          <lable>
-            <i>PRODUCT QUANTITY</i>
-          </lable>
-        </div>
-<div class="kickass_field">
+<form:errors path="productName"/>
+<form:input path="productName" placeholder="Enter Product Name"/>
+<form:errors path="productDescription"/>
+<form:input path="productDescription" placeholder="Enter Product Description"/>
+<form:errors path="productPrice"/>
+<form:input path="productPrice" placeholder="Enter Product Price"/>
+<form:errors path="productDiscount"/>
+<form:input path="productDiscount" placeholder="Enter Product Discount"/>
+<form:errors path="productQuantity"/>
+<form:input path="productQuantity" placeholder="Enter Product Quantity"/>
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="productName" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>PRODUCT NAME</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'>         -->
+<%-- 			<form:input path="productDescription" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>PRODUCT DESCRIPTION</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="productPrice" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>PRODUCT PRICE</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'>         -->
+<%-- 			<form:input path="productDiscount" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>PRODUCT DISCOUNT</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<!-- <div class='kickass_field'> -->
+<%--           <form:input path="productQuantity" maxlength='30' required='required'/> --%>
+<!--           <lable> -->
+<!--             <i>PRODUCT QUANTITY</i> -->
+<!--           </lable> -->
+<!--         </div> -->
+<div>
 <form:select path="category.categoryName">
 <form:options items="${categoryList}" itemValue="categoryName" itemLabel="categoryName"/>
 </form:select>
 </div>
-<div class="kickass_field">
+<div>
 <form:select path="subCategory.subCategoryName">
 <form:options items="${subCategoryList}" itemValue="subCategoryName" itemLabel="subCategoryName"/>
 </form:select>
@@ -147,8 +158,8 @@ max-width:1150px;
 <td>{{pList.productQuantity}}</td>
 <td>{{pList.productDiscount}}</td>
 <td>{{pList.productPrice}}</td>
-<td><a href="deleteProduct-{{pList.productId}}"><i class="fa fa-times"></i></a></td>
-<td><a href="editProduct-{{pList.productId}}"><i class="fa fa-pencil"></i></a></td>
+<td><a href="deleteProduct-{{pList.productId}}"><span class="glyphicon glyphicon-trash"></span></a></td>
+<td><a href="editProduct-{{pList.productId}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
 </tr>
 </table>
 </div>

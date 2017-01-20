@@ -90,6 +90,15 @@ public class UserDetailsDAOImpl implements UserDetailsDAO
 		return count;
 	}
 	
+	public int checkEmail(String emailId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+		List<UserDetails> userEmailIdList = session.createQuery("from UserDetails where emailid = '"+emailId+"'").getResultList();
+		int count = userEmailIdList.size();
+		return count;
+	}
+	
 	public ShippingAddress getShippingAddressByUserId(int userId)
 	{
 		Session session = sessionFactory.getCurrentSession();

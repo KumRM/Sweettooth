@@ -1,5 +1,7 @@
 package com.cakes.sweettooth.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,8 +26,18 @@ public class CartItemService
 		return cartItemDAOImpl.getCartListById(cartItemId);
 	}
 	
+	public List<CartItem> getCartList(int userId)
+	{
+		return  cartItemDAOImpl.getCartList(userId);
+	}
+	
 	public void updateFlag(int cartItemId)
 	{
 		cartItemDAOImpl.updateFlag(cartItemId);
+	}
+	
+	public void deleteCartItem(int cartItemId) 
+	{
+		cartItemDAOImpl.deleteCartItem(cartItemId);
 	}
 }

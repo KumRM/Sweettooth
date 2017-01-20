@@ -47,8 +47,8 @@ public class ProductService
 		return productDAOImpl.getProductViewById(productId);
 	}
 	
-	public void updateProductQuantity(int productId)
+	public void updateProductQuantity(int productId,int quantity)
 	{
-		productDAOImpl.updateProductQuantity(productId);
+		productDAOImpl.updateProductQuantity(productId,quantity);
 	}
 }

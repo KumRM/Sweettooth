@@ -24,20 +24,22 @@
 <body>
 <!--   <div class="container"> -->
   <!-- CODE FOR NAVBAR -->
-<nav style="height: 25px"  class="navbar navbar-fixed-top">
+<nav class="navbar navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span style="color: yellow; height: 250%; width: 250%" class="glyphicon glyphicon-triangle-bottom"></span>
+        <span style="color: yellow; height: 50%; width: 50%" class="glyphicon glyphicon-triangle-bottom"></span>
       </button>
-	<img style="height: 150px; width: 150px" class="navbar-brand" href="/SweetTooth/" alt="SweetTooth" src="resources/Images/logo.png"/>
+	<img style="height: 35pt; width: 35pt" href="/SweetTooth/" alt="SweetTooth" src="resources/Images/logo.png"/>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      	<li class="dropdown mega-dropdown">
-        <button type="button" class="btn btn-default"><a href="/SweetTooth/">Home</a></button>
+      	<li class="mega-dropdown">
         <button type="button" class="btn btn-default">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+        <a href="/SweetTooth/">Home</a>
+        </button>
+        <button type="button" class="btn btn-default dropdown-toggle">
+        <a href="#" data-toggle="dropdown">Products<span class="glyphicon glyphicon-menu-hamburger"></span></a>
         
         <ul class="dropdown-menu mega-dropdown-menu row">
 					<li class="col-sm-3">
@@ -106,10 +108,14 @@
                             </form>                                                       
 						</ul>
 					</li>
-				</ul>
+				</ol>
         </button>
-        <button type="button" class="btn btn-default"><a href="#">Customers</a></button> 
-        <button type="button" class="btn btn-default"><a href="#">Talk To Us</a></button>
+        <button type="button" class="btn btn-default">
+        <a href="#">Customers</a>
+        </button> 
+        <button type="button" class="btn btn-default">
+        <a href="#">Talk To Us</a>
+        </button>
 <%--         <c:if test="${!empty pageContext.request.userPrincipal}"> --%>
 <!--         <sec:authorize access="hasRole('ROLE_ADMIN')"> -->
 <!--         <button type="button" class="btn btn-default dropdown"> -->
@@ -169,6 +175,69 @@
         </button>
         </sec:authorize>
         </c:if>
+        <li type="button" class="btn btn-default dropdown-toggle">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-gift"></span> 7 - Items<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-cart" role="menu">
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>24$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>25$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>23$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+              </li>
+              <li>
+                  <span class="item">
+                    <span class="item-left">
+                        <img src="http://lorempixel.com/50/50/" alt="" />
+                        <span class="item-info">
+                            <span>Item name</span>
+                            <span>22$</span>
+                        </span>
+                    </span>
+                    <span class="item-right">
+                        <button class="btn btn-xs btn-danger pull-right">x</button>
+                    </span>
+                </span>
+              </li>
+              <li class="divider"></li>
+              <li><a class="text-center" href="">View Cart</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
 </div>

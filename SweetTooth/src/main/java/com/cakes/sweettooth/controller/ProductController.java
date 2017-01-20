@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.cakes.sweettooth.model.Baker;
+import com.cakes.sweettooth.model.CartItem;
 import com.cakes.sweettooth.model.Category;
 import com.cakes.sweettooth.model.Product;
 import com.cakes.sweettooth.model.SubCategory;
@@ -128,11 +130,12 @@ public class ProductController
 	}
 	
 	@RequestMapping("/viewProduct-{productId}")
-	public String viewProduct(Model model, @PathVariable("productId") int productId)
+	public String viewProduct(Model model, @PathVariable("productId") int productId, @ModelAttribute("cartItem") CartItem cartItem, HttpSession httpSession)
 	{
 		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String product = gson.toJson(productService.getProductViewById(productId));
 		model.addAttribute("prd", product);
+		httpSession.setAttribute("productId", productId);
 		return "/ProductDetails";
 	}
 }
