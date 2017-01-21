@@ -13,10 +13,38 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/style.css">
 <!--   <link rel="stylesheet" href="resources/css/SearchExpand.css"> -->
-  <script src="resources/js/jquery.min.js"></script>
+<!--   <script src="resources/js/jquery.min.js"></script> -->
   <script src="resources/js/bootstrap.min.js"></script>
   <script src="resources/js/angular.min.js"></script>
   <script src="resources/js/social.page.js"></script>
+  <script src="resources/js/jquery-3.1.0.min.js"></script>
+  <script src="resources/js/jquery.autocomplete.min.js"></script>
+  
+  <!-- ============AUTOCOMPLETE============== -->
+<script>
+  $(document).ready(function() {
+
+	$('#w-input-search').autocomplete({
+		serviceUrl: '${pageContext.request.contextPath}/getTags',
+		paramName: "tagName",
+		delimiter: ",",
+	   transformResult: function(response) {
+
+		return {
+		  //must convert json to javascript object before process
+		  suggestions: $.map($.parseJSON(response), function(item) {
+
+		      return { value: item.productName, data: item.productId };
+		   })
+
+		 };
+
+            }
+
+	 });
+
+  });
+  </script>
   
 <title>SweetTooth</title>
 
@@ -129,7 +157,7 @@
 <!--         </button> -->
 <!--         </sec:authorize> -->
 <%--         </c:if> --%>
-        <span style="font-size: 50px;  background: url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;"><input id="demo-2" type="search"/></span>
+        <span style="font-size: 50px;  background: url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;"><input id="w-input-search" type="search"/></span>
       	</li>
       </ul> 
           <ul class="nav navbar-nav navbar-right">
@@ -165,7 +193,7 @@
         <c:if test="${!empty pageContext.request.userPrincipal}">
         <sec:authorize access="hasRole('ROLE_ADMIN')">
         <button type="button" class="btn btn-default dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span><b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
         <ul class="dropdown-menu">
 			<li><a href="CategoryForm">CATEGORY</a></li>
         	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li>
@@ -175,8 +203,8 @@
         </button>
         </sec:authorize>
         </c:if>
-        <li type="button" class="btn btn-default dropdown-toggle">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-gift"></span> 7 - Items<span class="caret"></span></a>
+        <li class="dropdown-toggle">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-gift"></span><span class="caret"></span></a>
           <ul class="dropdown-menu dropdown-cart" role="menu">
               <li>
                   <span class="item">

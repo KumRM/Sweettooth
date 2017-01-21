@@ -23,7 +23,7 @@ display: none;
 max-width: 750px;
 }
 </style>
-<div class="jumbotron">
+<div class="page-header">
 <h1 align="center">
 <p style="font-size: xx-large;font-weight:900; font-family: sans-serif; color: purple;">SUB-CATEGORY REGISTRATION FORM</p>
 </h1>

@@ -138,4 +138,13 @@ public class ProductController
 		httpSession.setAttribute("productId", productId);
 		return "/ProductDetails";
 	}
+	
+	@RequestMapping("/allProducts")
+	public String allProducts(Model model)
+	{
+//		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String allproducts = productService.getJsonProductList();
+		model.addAttribute("allproducts", allproducts);
+		return "DisplayProducts";
+	}
 }

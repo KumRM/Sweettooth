@@ -23,7 +23,7 @@ display: none;
 max-width:1150px;
 }
 </style>
-<div class="jumbotron">
+<div class="page-header">
 <!-- style="background-image: url('resources/Images/background-with-chocolate-cake-macarons.jpg');" -->
 <h1 align="center">
 <p style="font-size: xx-large;font-weight:900; font-family: sans-serif; color: purple;">PRODUCT REGISTRATION FORM</p>
