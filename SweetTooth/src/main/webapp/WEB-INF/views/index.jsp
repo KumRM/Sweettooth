@@ -16,7 +16,7 @@
 		<div class="item active">
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
-				<h1 class="brand_name">
+				<h1 style="color: #823f3f;">
 					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
@@ -27,7 +27,7 @@
 		<div class="item">
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
-				<h1 class="brand_name">
+				<h1 style="color: #823f3f;">
 					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
@@ -38,7 +38,7 @@
 		<div class="item">
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
-				<h1 class="brand_name">
+				<h1 style="color: #823f3f;">
 					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
@@ -49,7 +49,7 @@
 		<div class="item">
 		<div class="brand wow fadeIn">
 			<div class="carousel-caption">
-				<h1 class="brand_name">
+				<h1 style="color: #823f3f;">
 					<i><b><p>SweetTooth</p></b></i>
 				</h1>
 			</div>
@@ -67,19 +67,20 @@
 	<!--     </div> -->
 
 	<!--========LEFT AND RIGHT CONTROLS==============-->
-	<a class="left carousel-control" href="#myCarousel" role="button"
-		data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
-		aria-hidden="true"></span> <span class="sr-only">Previous</span>
-	</a> <a class="right carousel-control" href="#myCarousel" role="button"
-		data-slide="next"> <span class="glyphicon glyphicon-chevron-right"
-		aria-hidden="true"></span> <span class="sr-only">Next</span>
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> 
+	 <span style="color: #eea236;" class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+<!-- 	 <span class="sr-only">Previous</span> -->
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	 <span style="color: #eea236;" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<!-- 	 <span class="sr-only">Next</span> -->
 	</a>
 </div>
 
 <!--=============DECORATION/SEPARATION=================-->
 
 <div class="decoration">
-<h6>oooooooooooooooooo</h6>
+<h6 style="color: #823f3f">oooooooooooooooooo</h6>
 	<h2><em>Our</em><i>Products</i></h2>
 </div>
 
@@ -246,7 +247,7 @@
 <!--=============BESTSELLERS=================-->
 
 <div class="decoration">
-<h6>oooooooooooooooooo</h6>
+<h6 style="color: #823f3f">oooooooooooooooooo</h6>
 	<h2><em>Our Best</em></h2>
 </div>
 

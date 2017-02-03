@@ -1,8 +1,8 @@
 <%@ include file="Header.jsp"  %>
-<div align="center">
-<h1>
-<p style="font-size: x-large;">ORDER DETAILS PAGE</p>
-</h1>
+<div class="page-header">
+<h2 align="center">
+<p style="font-size: smaller; color: #823f3f;">YOUR BOX</p>
+</h2>
 </div>
 <div ng-app="app" ng-controller="myCtrl" class="card">
 <div class="container-fluid table-responsive">
@@ -23,9 +23,9 @@
             </tr>
             <tr>
             <td>
-            <button type="button" class="btn btn-warning">
-            	<a href="checkout?userId=${sessionScope.userId}">CHECKOUT</a>
-            </button>
+            <a class="btn btn-warning" href="checkout?userId=${sessionScope.userId}">
+            		<b style="color: #823f3f;">CHECKOUT</b>
+            	</a>
             </td>
             </tr>
 </table>

@@ -1,8 +1,8 @@
 <%@include file="Header.jsp"%>
-<div align="center">
-<h1>
-<p style="font-size: x-large;">BILLING ADDRESS</p>
-</h1>
+<div class="page-header">
+<h2 align="center">
+<p style="font-size: smaller; color: #823f3f;">Billing Address</p>
+</h2>
 </div>
 <div align="center">
 <div class="signup" align="center">

@@ -24,11 +24,13 @@ public class WishListController
 {
 	@Autowired
 	WishListService wishListService;
+	
 	@Autowired
 	UserDetailsService userDetailsService;
 	
 	@Autowired
 	ProductService productService;
+	
 	@RequestMapping("/addToWishList-{productId}")
 	public String addToWishList(Model model, @PathVariable("productId") int productId, @ModelAttribute("wishList") WishList wishList, @RequestParam("userId")int userId, HttpSession httpSession) 
 	{

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/style.css">
 <!--   <link rel="stylesheet" href="resources/css/SearchExpand.css"> -->
-<!--   <script src="resources/js/jquery.min.js"></script> -->
+  <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/bootstrap.min.js"></script>
   <script src="resources/js/angular.min.js"></script>
   <script src="resources/js/social.page.js"></script>
@@ -56,21 +56,25 @@
   <div class="container">
     <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span style="color: yellow; height: 50%; width: 50%" class="glyphicon glyphicon-triangle-bottom"></span>
+        <span style="color: #eea236; height: 50%; width: 50%" class="glyphicon glyphicon-triangle-bottom"></span>
       </button>
 	<img style="height: 35pt; width: 35pt" href="/SweetTooth/" alt="SweetTooth" src="resources/Images/logo.png"/>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse form-inline" id="myNavbar">
       <ul class="nav navbar-nav">
       	<li class="mega-dropdown">
-        <button type="button" class="btn btn-default">
-        <a href="/SweetTooth/">Home</a>
-        </button>
-        <button type="button" class="btn btn-default dropdown-toggle">
-        <a href="#" data-toggle="dropdown">Products<span class="glyphicon glyphicon-menu-hamburger"></span></a>
-        
+      	<div class="form-inline	">
+        <a class="btn btn-warning" href="/SweetTooth/">
+        <b style="color: #823f3f;">HOME</b>
+<!--         <input type="button" class="btn btn-default" value="Home"> -->
+<!--         </input> -->
+        </a>
+        <a href="#" class="dropdown-toggle btn btn-warning dropdown" data-toggle="dropdown">        
+        <b style="color: #823f3f;">PRODUCTS</b>
+        <span style="color: #823f3f;" class="glyphicon glyphicon-menu-hamburger"></span>
+<!--         <input type="button" class="dropdown-toggle" value=""> -->
         <ul class="dropdown-menu mega-dropdown-menu row">
-					<li class="col-sm-3">
+					<li class="col-sm-4">
 						<ul>
 							<li class="dropdown-header">New in Stores</li>                            
 <!--                             <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
@@ -91,12 +95,26 @@
 <!--                                     <button class="btn btn-primary" type="button">49,99 </button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>       -->
 <!--                                 </div>End Item                                 -->
 <!--                               </div>End Carousel Inner -->
-<!--                             </div>/.carousel -->
+<!--                             </div> -->
+<!--                             /.carousel -->
                             <li class="divider"></li>
                             <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
 						</ul>
 					</li>
-					<li class="col-sm-3">
+<!-- 					<li class="col-sm-3"> -->
+<!-- 						<ul> -->
+<!-- 							<li class="dropdown-header">Jackets</li> -->
+<!-- 							<li><a href="#">Easy to customize</a></li> -->
+<!-- 							<li><a href="#">Glyphicons</a></li> -->
+<!-- 							<li><a href="#">Pull Right Elements</a></li> -->
+<!-- 							<li class="divider"></li> -->
+<!-- 							<li class="dropdown-header">Pants</li> -->
+<!-- 							<li><a href="#">Coloured Headers</a></li> -->
+<!-- 							<li><a href="#">Primary Buttons & Default</a></li> -->
+<!-- 							<li><a href="#">Calls to action</a></li> -->
+<!-- 						</ul> -->
+<!-- 					</li> -->
+					<li class="col-sm-4">
 					<c:forEach items="${categoryListDrop}" var="category">
 						<ul class="dropdown-header">
 						<li href="#">${category.categoryName}</li>
@@ -106,20 +124,7 @@
 						</ul>
 						</c:forEach>
 					</li>
-					<li class="col-sm-3">
-						<ul>
-							<li class="dropdown-header">Jackets</li>
-							<li><a href="#">Easy to customize</a></li>
-							<li><a href="#">Glyphicons</a></li>
-							<li><a href="#">Pull Right Elements</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Pants</li>
-							<li><a href="#">Coloured Headers</a></li>
-							<li><a href="#">Primary Buttons & Default</a></li>
-							<li><a href="#">Calls to action</a></li>
-						</ul>
-					</li>
-					<li class="col-sm-3">
+					<li class="col-sm-4">
 						<ul>
 							<li class="dropdown-header">Accessories</li>
 							<li><a href="#">Default Navbar</a></li>
@@ -136,136 +141,93 @@
                             </form>                                                       
 						</ul>
 					</li>
-				</ol>
-        </button>
-        <button type="button" class="btn btn-default">
-        <a href="#">Customers</a>
-        </button> 
-        <button type="button" class="btn btn-default">
-        <a href="#">Talk To Us</a>
-        </button>
-<%--         <c:if test="${!empty pageContext.request.userPrincipal}"> --%>
-<!--         <sec:authorize access="hasRole('ROLE_ADMIN')"> -->
-<!--         <button type="button" class="btn btn-default dropdown"> -->
-<!--         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forms<b class="caret"></b></a> -->
-<!--         <ul class="dropdown-menu"> -->
-<!-- 			<li><a href="CategoryForm">CATEGORY</a></li> -->
-<!--         	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li> -->
-<!--         	<li><a href="BakerForm">BAKER</a></li> -->
-<!--         	<li><a href="ProductForm">PRODUCT</a></li> -->
-<!--         </ul>	         -->
-<!--         </button> -->
-<!--         </sec:authorize> -->
-<%--         </c:if> --%>
-        <span style="font-size: 50px;  background: url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;"><input id="w-input-search" type="search"/></span>
+				</ul>				
+<!--         </input> -->
+        </a>
+        <a href="#" class="btn btn-warning">
+        <b style="color: #823f3f;">CUSTOMERS</b>
+<!--         <input type="button" class="btn btn-default" value="Customers"> -->
+<!--         </input>  -->
+        </a>
+        <a href="#" class="btn btn-warning">
+        <b style="color: #823f3f;">TALK TO US</b>
+<!--         <input type="button" class="btn btn-default" value="Talk To Us"> -->
+<!--         </input> -->
+        </a>
+        <c:if test="${!empty pageContext.request.userPrincipal}">
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <a href="#" class="dropdown-toggle btn btn-warning" data-toggle="dropdown">
+        <span style="color: #823f3f;" class="glyphicon glyphicon-circle-arrow-down"></span>
+        </a>
+        <ul class="dropdown-menu">
+			<li><a href="CategoryForm">CATEGORY</a></li>
+        	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li>
+        	<li><a href="BakerForm">BAKER</a></li>
+        	<li><a href="ProductForm">PRODUCT</a></li>
+        </ul>
+        </sec:authorize>
+        </c:if>
+        <span style="font-size: 50px;  background: url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;">
+        <input type="search" id="w-input-search"/>
+        </span>
+      	</div>
       	</li>
       </ul> 
           <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-default dropdown">
+<!--         <button type="button" class="btn btn-default dropdown"> -->
         <c:if test="${empty pageContext.request.userPrincipal}">
-        <a href="reg"><span class="glyphicon glyphicon-user"></span>Sign Up</a>
+        <a href="reg" class="btn btn-warning">
+        <b style="color: #823f3f;">SIGN UP</b>
+        <span style="color: #823f3f;" class="glyphicon glyphicon-user"></span>
+        </a>
         </c:if>
         <c:if test="${!empty pageContext.request.userPrincipal}">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>${pageContext.request.userPrincipal.name}<b class="caret"></b></a>
+        <a href="#" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+        <b style="color: #823f3f;">${pageContext.request.userPrincipal.name}</b>
+        <span style="color: #823f3f;" class="glyphicon glyphicon-user"></span><b  style="color: #823f3f;" class="caret"></b>
+        </a>
         <ul class="dropdown-menu">
         	<li><a href="#">YOUR PROFILE</a></li>
         	<li><a href="#">ORDER HISTORY</a></li>
         	<li><a href="#">YOUR BOX</a></li>
         	<li><a href="#">PRODUCT</a></li>
         </ul>
-<!--         <button type="button" class="btn btn-default"> -->
-<!--         <a><span class="glyphicon glyphicon-gift"></span></a> -->
-<!--         </button> -->
         </c:if>
-        </button>
-        <button type="button" class="btn btn-default dropdown">
         <c:if test="${empty pageContext.request.userPrincipal}">
-        <a href="LoginForm"><span class="glyphicon glyphicon-log-in"></span> LogIn</a>
+        <a href="LoginForm" class="btn btn-warning">
+        <b style="color: #823f3f;">LOGIN</b>
+        <span style="color: #823f3f;" class="glyphicon glyphicon-log-in"></span>
+        </a>
         </c:if>
         <c:if test="${!empty pageContext.request.userPrincipal}">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-out"></span>Account<b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle btn btn-warning" data-toggle="dropdown">
+        <b style="color: #823f3f;">ACCOUNT</b>
+        <span style="color: #823f3f;" class="glyphicon glyphicon-log-out"></span><b style="color: #823f3f;" class="caret"></b>
+        </a>
         <ul class="dropdown-menu">
-        	<li><a href="#">Settings</a></li>
-        	<li><a href="logout">Log Out</a></li>
+        	<li><a href="#">SETTINGS</a></li>
+        	<li><a href="logout">LOG OUT</a></li>
         </ul>
         </c:if>
-        </button>
-        <c:if test="${!empty pageContext.request.userPrincipal}">
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <button type="button" class="btn btn-default dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
-        <ul class="dropdown-menu">
-			<li><a href="CategoryForm">CATEGORY</a></li>
-        	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li>
-        	<li><a href="BakerForm">BAKER</a></li>
-        	<li><a href="ProductForm">PRODUCT</a></li>
-        </ul>	        
-        </button>
-        </sec:authorize>
-        </c:if>
-        <li class="dropdown-toggle">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-gift"></span><span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-cart" role="menu">
-              <li>
-                  <span class="item">
-                    <span class="item-left">
-                        <img src="http://lorempixel.com/50/50/" alt="" />
-                        <span class="item-info">
-                            <span>Item name</span>
-                            <span>24$</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-              </li>
-              <li>
-                  <span class="item">
-                    <span class="item-left">
-                        <img src="http://lorempixel.com/50/50/" alt="" />
-                        <span class="item-info">
-                            <span>Item name</span>
-                            <span>25$</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-              </li>
-              <li>
-                  <span class="item">
-                    <span class="item-left">
-                        <img src="http://lorempixel.com/50/50/" alt="" />
-                        <span class="item-info">
-                            <span>Item name</span>
-                            <span>23$</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-              </li>
-              <li>
-                  <span class="item">
-                    <span class="item-left">
-                        <img src="http://lorempixel.com/50/50/" alt="" />
-                        <span class="item-info">
-                            <span>Item name</span>
-                            <span>22$</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-              </li>
-              <li class="divider"></li>
-              <li><a class="text-center" href="">View Cart</a></li>
-          </ul>
-        </li>
+<!--         <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-gift"></span><span class="caret"></span></a> -->
+<!--           <ul class="dropdown-menu dropdown-cart" role="menu"> -->
+<!--               <li> -->
+<!--                   <span class="item"> -->
+<!--                     <span class="item-left"> -->
+<!--                         <img src="http://lorempixel.com/50/50/" alt="" /> -->
+<!--                         <span class="item-info"> -->
+<!--                             <span>Item name</span> -->
+<!--                             <span>24$</span> -->
+<!--                         </span> -->
+<!--                     </span> -->
+<!--                     <span class="item-right"> -->
+<!--                         <button class="btn btn-xs btn-danger pull-right">x</button> -->
+<!--                     </span> -->
+<!--                 </span> -->
+<!--               </li> -->
+<!--               <li class="divider"></li> -->
+<!--               <li><a class="text-center" href="">View Cart</a></li> -->
+<!--           </ul> -->
       </ul>
     </div>
 </div>

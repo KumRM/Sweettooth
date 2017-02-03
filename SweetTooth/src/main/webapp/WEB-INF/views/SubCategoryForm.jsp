@@ -24,9 +24,9 @@ max-width: 750px;
 }
 </style>
 <div class="page-header">
-<h1 align="center">
-<p style="font-size: xx-large;font-weight:900; font-family: sans-serif; color: purple;">SUB-CATEGORY REGISTRATION FORM</p>
-</h1>
+<h2 align="center">
+<p style="font-size: smaller; color: #823f3f;">Sub-Category Registration Form</p>
+</h2>
 </div>
 <div ng-app="app" ng-controller="myCtrl" align="left">
 <div align="center">
@@ -71,28 +71,28 @@ max-width: 750px;
 </tr>
 <tr align="left">
 <td>
-<input type="button" class="btn btn-link" ng-click="sortType='subCategoryId'; sortReverse = !sortReverse" value="SUB CATEGORY ID">
+<input type="button" class="btn btn-warning" ng-click="sortType='subCategoryId'; sortReverse = !sortReverse" value="SUB CATEGORY ID">
 <span ng-show="sortType == 'subCategoryId' && !sortReverse" class="fa fa-caret-down"></span>
 <span ng-show="sortType == 'subCategoryId' && sortReverse" class="fa fa-caret-up"></span>
 </input>
 </td>
 <td>
-<input type="button" class="btn btn-link" ng-click="sortType='subCategoryName'; sortReverse = !sortReverse" value="SUB CATEGORY NAME">
+<input type="button" class="btn btn-warning" ng-click="sortType='subCategoryName'; sortReverse = !sortReverse" value="SUB CATEGORY NAME">
 <span ng-show="sortType == 'subCategoryName' && !sortReverse" class="fa fa-caret-down"></span>
 <span ng-show="sortType == 'subCategoryName' && sortReverse" class="fa fa-caret-up"></span>
 </input>
 </td>
 <td>
-<input type="button" class="btn btn-link" ng-click="sortType='subCategoryDescription'; sortReverse = !sortReverse" value="SUB CATEGORY DESCRIPTION">
+<input type="button" class="btn btn-warning" ng-click="sortType='subCategoryDescription'; sortReverse = !sortReverse" value="SUB CATEGORY DESCRIPTION">
 <span ng-show="sortType == 'subCategoryDescription' && !sortReverse" class="fa fa-caret-down"></span>
 <span ng-show="sortType == 'subCategoryDescription' && sortReverse" class="fa fa-caret-up"></span>
 </input>
 </td>
 <td>
-<input type="button" class="btn btn-link" value="DELETE"/>
+<input type="button" class="btn btn-warning" value="DELETE"/>
 </td>
 <td>
-<input input type="button" class="btn btn-link" value="EDIT"/>
+<input input type="button" class="btn btn-warning" value="EDIT"/>
 </td>
 </tr>
 <tr ng-repeat="scList in jsonData | filter:find | orderBy:sortType:sortReverse">

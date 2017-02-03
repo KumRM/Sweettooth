@@ -8,8 +8,8 @@
 <div class="container-fluid">
 <div class="breadcrumbs-main">
 <ol class="breadcrumb">
-<li><a href="/Sweettooth/">Home</a></li>
-<li class="active">All Products</li>
+<li><a href="/SweetTooth/">Home</a></li>
+<li class="active"><a href="/SweetTooth/allProducts">All Products</a></li>
 </ol>
 </div>
 </div>
@@ -21,7 +21,7 @@
             <ul class="sidebar-nav" style="margin-left:0;">
                 <li class="sidebar-brand">
                     
-<a href="#menu-toggle"  id="menu-toggle" style="margin-top:20px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;"></i> 
+<a href="#menu-toggle"  id="menu-toggle" style="margin-top:0px;float:right;" > <i class="fa fa-bars " style="font-size:20px !Important;"></i> 
                     
                 </li>
                 <li>

@@ -6,10 +6,10 @@ display: none;
 max-width: 400px;
 }
 </style>
-<div align="center">
-<h1>
-<p style="font-size: x-large;">SHIPPING ADDRESS FORM</p>
-</h1>
+<div class="page-header">
+<h2 align="center">
+<p style="font-size: smaller; color: #823f3f;">Shipping Address</p>
+</h2>
 </div>
 <div align="center">
 <fieldset>

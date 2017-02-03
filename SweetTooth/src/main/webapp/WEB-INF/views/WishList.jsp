@@ -1,8 +1,8 @@
 <%@ include file="Header.jsp"  %>
-<div align="center">
-<h1>
-<p style="font-size: x-large;">WISH LIST PAGE</p>
-</h1>
+<div class="page-header">
+<h2 align="center">
+<p style="font-size: smaller; color: #823f3f;">YOUR WISHLIST</p>
+</h2>
 </div>
 <div ng-app="app" ng-controller="myCtrl" class="card">
 <div class="container-fluid table-responsive">
@@ -21,7 +21,9 @@
                 <td>{{wL.productPrice}}</td>
                 <td>{{wL.productPrice * wL.productQuantity}}</td>
                 <td>
-            	<a href="buyNow-{{wL.productId}}?userId=1">Add To Cart</a>
+            	<a class="btn btn-warning" href="buyNow-{{wL.productId}}?userId=1">
+            	<b style="color: #823f3f;">ADD TO CART</b>
+            	</a>
             	</td>
             </tr>
             <tr>
