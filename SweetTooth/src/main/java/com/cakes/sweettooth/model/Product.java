@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -32,23 +33,23 @@ public class Product
 	private int categoryId;
 	
 	@Expose
-	@NotEmpty(message="Field Cannot Be Left Empty")
-	@Pattern(regexp="[0-9]+")
+	@NotNull(message="Field Cannot Be Left Empty")
+//	@Pattern(regexp="[0-9]+")
 	private int productPrice;
 	
 	@Expose
-	@NotEmpty(message="Field Cannot Be Left Empty")
-	@Pattern(regexp="[0-9]+")
+	@NotNull(message="Field Cannot Be Left Empty")
+//	@Pattern(regexp="[0-9]+")
 	private int productDiscount;
 	
 	@Expose
-	@NotEmpty(message="Field Cannot Be Left Empty")
-	@Pattern(regexp="[0-9]+")
+//	@NotNull(message="Field Cannot Be Left Empty")
+//	@Pattern(regexp="[0-9]+")
 	private int productQuantity;
 	
 	@Expose
 	@NotEmpty(message="Field Cannot Be Left Empty")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Name Format")
+	@Pattern(regexp="[a-zA-Z_ ]{1}+[a-zA-Z0-9_ ]+", message="Invalid Name Format")
 	private String productName;
 	
 	@Expose

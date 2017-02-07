@@ -57,12 +57,14 @@
 <!-- <div class="col-md-4"> -->
 <!-- </div> -->
 <div class="row">
-<div class="col-md-4" ng-repeat="aP in allProducts">
+<div class="col-md-6" ng-repeat="aP in allProducts">
 <div class="product-item">
               <div class="pic">
-                <img src="resources/Images/{{aP.productId}}.jpg" class="img-responsive" alt="Berry Lace Dress">
+                <img src="resources/Images/{{aP.productId}}.jpg" alt="Berry Lace Dress">
               </div>
-              <h3><a href="shop-item.html">{{aP.productName}}</a></h3>
+              <h3>
+              <a href="shop-item.html">{{aP.productName}}</a>
+              </h3>
               <div class="pi-price">{{aP.productPrice}}</div>
               <a href="addToWishList-{{aP.productId}}?userId=1" class="btn btn-warning fa fa-heart"></a>
               <a href="viewProduct-{{aP.productId}}" class="btn add2cart">View</a>

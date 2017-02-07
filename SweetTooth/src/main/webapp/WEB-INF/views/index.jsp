@@ -256,7 +256,7 @@
 <div class="row">
         <div ng-repeat="jPD in jsonProductData" class="col-md-4">
             <div class="product-item">
-              <div class="pic">
+              <div class="pic" style="height: 250pt">
                 <img src="resources/Images/{{jPD.productId}}.jpg" class="img-responsive" alt="Berry Lace Dress">
               </div>
               <h3><a href="shop-item.html">{{jPD.productName}}</a></h3>

@@ -63,73 +63,22 @@
     <div class="collapse navbar-collapse form-inline" id="myNavbar">
       <ul class="nav navbar-nav">
       	<li class="mega-dropdown">
-      	<div class="form-inline	">
+      	<div class="form-inline">
         <a class="btn btn-warning" href="/SweetTooth/">
         <b style="color: #823f3f;">HOME</b>
 <!--         <input type="button" class="btn btn-default" value="Home"> -->
 <!--         </input> -->
         </a>
-        <a href="#" class="dropdown-toggle btn btn-warning dropdown" data-toggle="dropdown">        
-        <b style="color: #823f3f;">PRODUCTS</b>
-        <span style="color: #823f3f;" class="glyphicon glyphicon-menu-hamburger"></span>
-<!--         <input type="button" class="dropdown-toggle" value=""> -->
-        <ul class="dropdown-menu mega-dropdown-menu row">
-					<li class="col-sm-4">
-						<ul>
-							<li class="dropdown-header">New in Stores</li>                            
-<!--                             <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
-<!--                               <div class="carousel-inner"> -->
-<!--                                 <div class="item active"> -->
-<!--                                     <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 1"></a> -->
-<!--                                     <h4><small>Summer dress floral prints</small></h4>                                         -->
-<!--                                     <button class="btn btn-primary" type="button">49,99 </button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>        -->
-<!--                                 </div>End Item -->
-<!--                                 <div class="item"> -->
-<!--                                     <a href="#"><img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 2"></a> -->
-<!--                                     <h4><small>Gold sandals with shiny touch</small></h4>                                         -->
-<!--                                     <button class="btn btn-primary" type="button">9,99 </button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>         -->
-<!--                                 </div>End Item -->
-<!--                                 <div class="item"> -->
-<!--                                     <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a> -->
-<!--                                     <h4><small>Denin jacket stamped</small></h4>                                         -->
-<!--                                     <button class="btn btn-primary" type="button">49,99 </button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>       -->
-<!--                                 </div>End Item                                 -->
-<!--                               </div>End Carousel Inner -->
-<!--                             </div> -->
-<!--                             /.carousel -->
-                            <li class="divider"></li>
-                            <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
-						</ul>
-					</li>
-<!-- 					<li class="col-sm-3"> -->
-<!-- 						<ul> -->
-<!-- 							<li class="dropdown-header">Jackets</li> -->
-<!-- 							<li><a href="#">Easy to customize</a></li> -->
-<!-- 							<li><a href="#">Glyphicons</a></li> -->
-<!-- 							<li><a href="#">Pull Right Elements</a></li> -->
-<!-- 							<li class="divider"></li> -->
-<!-- 							<li class="dropdown-header">Pants</li> -->
-<!-- 							<li><a href="#">Coloured Headers</a></li> -->
-<!-- 							<li><a href="#">Primary Buttons & Default</a></li> -->
-<!-- 							<li><a href="#">Calls to action</a></li> -->
-<!-- 						</ul> -->
-<!-- 					</li> -->
-					<li class="col-sm-4">
-					<c:forEach items="${categoryListDrop}" var="category">
-						<ul class="dropdown-header">
-						<li href="#">${category.categoryName}</li>
-						<c:forEach items="${category.subCategorySet}" var="subCategory">
-						<li><a>${subCategory.subCategoryName}</a></li>
-						</c:forEach>
-						</ul>
-						</c:forEach>
-					</li>
-					<li class="col-sm-4">
-						<ul>
-							<li class="dropdown-header">Accessories</li>
-							<li><a href="#">Default Navbar</a></li>
-							<li><a href="#">Lovely Fonts</a></li>
-							<li><a href="#">Responsive Dropdown </a></li>							
+        <input type="button" href="#" class="dropdown-toggle btn btn-warning dropdown" data-toggle="dropdown" style="color: #823f3f; font-weight: bolder;" value="PRODUCTS">        
+        <ul style="background-color: #f0ad4e; border-bottom-color: #823f3f" class="dropdown-menu mega-dropdown-menu row">
+							<li class="col-sm-4">
+							<a href="#" style="color: #823f3f">
+							<b>
+                            View all Products.
+                            </b>
+                            <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                            </a>
+							<ul>
 							<li class="divider"></li>
                             <li class="dropdown-header">Newsletter</li>
                             <form class="form" role="form">
@@ -137,15 +86,38 @@
                                 <label class="sr-only" for="email">Email address</label>
                                 <input type="email" class="form-control" id="email" placeholder="Enter email">                                                              
                               </div>
-<!--                               <button type="submit" class="btn btn-primary btn-block">Sign in</button> -->
-                            </form>                                                       
+                            </form>
+                            </ul>
+                            </li>
+					<c:forEach items="${categoryListDrop}" var="category">
+					<li class="col-sm-2">
+						<ul class="dropdown-header">
+						<li href="#">${category.categoryName}</li>
+						<c:forEach items="${category.subCategorySet}" var="subCategory">
+						<li>
+						<a>${subCategory.subCategoryName}</a>
+						</li>
+						</c:forEach>
 						</ul>
 					</li>
+					</c:forEach>
+<!-- 					<li class="col-sm-3"> -->
+<!-- 						<ul> -->
+<!-- 							<li class="dropdown-header">Accessories</li> -->
+<!-- 							<li><a href="#">Default Navbar</a></li> -->
+<!-- 							<li><a href="#">Lovely Fonts</a></li> -->
+<!-- 							<li><a href="#">Responsive Dropdown </a></li>                                                        -->
+<!-- 						</ul> -->
+<!-- 					</li> -->
 				</ul>				
-<!--         </input> -->
+        </input>
+        <a href="#" class="btn btn-warning">
+        <b style="color: #823f3f;">CUSTOMERS SPEAK</b>
+<!--         <input type="button" class="btn btn-default" value="Customers"> -->
+<!--         </input>  -->
         </a>
         <a href="#" class="btn btn-warning">
-        <b style="color: #823f3f;">CUSTOMERS</b>
+        <b style="color: #823f3f;">ABOUT US</b>
 <!--         <input type="button" class="btn btn-default" value="Customers"> -->
 <!--         </input>  -->
         </a>
@@ -156,23 +128,24 @@
         </a>
         <c:if test="${!empty pageContext.request.userPrincipal}">
         <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <a href="#" class="dropdown-toggle btn btn-warning" data-toggle="dropdown">
-        <span style="color: #823f3f;" class="glyphicon glyphicon-circle-arrow-down"></span>
-        </a>
+        <input type="button" href="#" class="dropdown-toggle btn btn-warning dropdown" data-toggle="dropdown" style="color: #823f3f; font-weight: bolder;" value="FORMS">
+<!-- 		<b style="color: #823f3f;" class="caret"></b> -->
+<!--         <span style="color: #823f3f;" class="glyphicon glyphicon-circle-arrow-down"></span> -->
         <ul class="dropdown-menu">
 			<li><a href="CategoryForm">CATEGORY</a></li>
         	<li><a href="SubCategoryForm">SUB-CATEGORY</a></li>
         	<li><a href="BakerForm">BAKER</a></li>
         	<li><a href="ProductForm">PRODUCT</a></li>
         </ul>
+        </input>
         </sec:authorize>
         </c:if>
         <span style="font-size: 50px;  background: url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;">
         <input type="search" id="w-input-search"/>
         </span>
-      	</div>
-      	</li>
-      </ul> 
+        </div>
+        </li>
+      </ul>
           <ul class="nav navbar-nav navbar-right">
 <!--         <button type="button" class="btn btn-default dropdown"> -->
         <c:if test="${empty pageContext.request.userPrincipal}">
@@ -230,7 +203,7 @@
 <!--           </ul> -->
       </ul>
     </div>
-</div>
+    </div>
 </nav>
 
 <!-- SOCIAL LINKS -->
@@ -243,139 +216,3 @@
     <a class="a2a_button_pinterest"></a>
     <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
 </div>
-
-
-<!-- <nav class="navbar navbar-fixed-top"> -->
-<!-- <div class="container"> -->
-<!--     <div class="navbar-header"> -->
-<!--     	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse"> -->
-<!-- 			<span class="sr-only">Toggle navigation</span> -->
-<!-- 			<span class="icon-bar"></span> -->
-<!-- 			<span class="icon-bar"></span> -->
-<!-- 			<span class="icon-bar"></span> -->
-<!-- 		</button> -->
-<!-- 		<a class="navbar-brand" href="#">MegaMenu</a> -->
-<!-- 	</div> -->
-	
-	
-<!-- 	<div class="collapse navbar-collapse js-navbar-collapse"> -->
-<!-- 		<ul class="nav navbar-nav"> -->
-<!-- 			<li class="dropdown mega-dropdown"> -->
-<!-- 				<a href="/">Home</a> -->
-<!-- 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Collection <span class="glyphicon glyphicon-chevron-down pull-right"></span></a> -->
-<!-- 				<a href="#">Customers</a> -->
-<!-- 				<a href="#">Talk To Us</a> -->
-<!-- 				<ul class="dropdown-menu mega-dropdown-menu row"> -->
-<!-- 					<li class="col-sm-3"> -->
-<!-- 						<ul> -->
-<!-- 							<li class="dropdown-header">New in Stores</li>                             -->
-<!--                             <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
-<!--                               <div class="carousel-inner"> -->
-<!--                                 <div class="item active"> -->
-<!--                                     <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 1"></a> -->
-<!--                                     <h4><small>Summer dress floral prints</small></h4>                                         -->
-<!--                                     <button class="btn btn-primary" type="button">49,99</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>        -->
-<!--                                 </div>End Item -->
-<!--                                 <div class="item"> -->
-<!--                                     <a href="#"><img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 2"></a> -->
-<!--                                     <h4><small>Gold sandals with shiny touch</small></h4>                                         -->
-<!--                                     <button class="btn btn-primary" type="button">9,99</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>         -->
-<!--                                 </div>End Item -->
-<!--                                 <div class="item"> -->
-<!--                                     <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive" alt="product 3"></a> -->
-<!--                                     <h4><small>Denin jacket stamped</small></h4>                                         -->
-<!--                                     <button class="btn btn-primary" type="button">49,99</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>       -->
-<!--                                 </div>End Item                                 -->
-<!--                               </div>End Carousel Inner -->
-<!--                             </div>/.carousel -->
-<!--                             <li class="divider"></li> -->
-<!--                             <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li> -->
-<!-- 						</ul> -->
-<!-- 					</li> -->
-<!-- 					<li class="col-sm-3"> -->
-<!-- 						<ul> -->
-<!-- 							<li class="dropdown-header">Dresses</li> -->
-<!-- 							<li><a href="#">Unique Features</a></li> -->
-<!-- 							<li><a href="#">Image Responsive</a></li> -->
-<!-- 							<li><a href="#">Auto Carousel</a></li> -->
-<!-- 							<li><a href="#">Newsletter Form</a></li> -->
-<!-- 							<li><a href="#">Four columns</a></li> -->
-<!-- 							<li class="divider"></li> -->
-<!-- 							<li class="dropdown-header">Tops</li> -->
-<!-- 							<li><a href="#">Good Typography</a></li> -->
-<!-- 						</ul> -->
-<!-- 					</li> -->
-<!-- 					<li class="col-sm-3"> -->
-<!-- 						<ul> -->
-<!-- 							<li class="dropdown-header">Jackets</li> -->
-<!-- 							<li><a href="#">Easy to customize</a></li> -->
-<!-- 							<li><a href="#">Glyphicons</a></li> -->
-<!-- 							<li><a href="#">Pull Right Elements</a></li> -->
-<!-- 							<li class="divider"></li> -->
-<!-- 							<li class="dropdown-header">Pants</li> -->
-<!-- 							<li><a href="#">Coloured Headers</a></li> -->
-<!-- 							<li><a href="#">Primary Buttons & Default</a></li> -->
-<!-- 							<li><a href="#">Calls to action</a></li> -->
-<!-- 						</ul> -->
-<!-- 					</li> -->
-<!-- 					<li class="col-sm-3"> -->
-<!-- 						<ul> -->
-<!-- 							<li class="dropdown-header">Accessories</li> -->
-<!-- 							<li><a href="#">Default Navbar</a></li> -->
-<!-- 							<li><a href="#">Lovely Fonts</a></li> -->
-<!-- 							<li><a href="#">Responsive Dropdown </a></li>							 -->
-<!-- 							<li class="divider"></li> -->
-<!--                             <li class="dropdown-header">Newsletter</li> -->
-<%--                             <form class="form" role="form"> --%>
-<!--                               <div class="form-group"> -->
-<!--                                 <label class="sr-only" for="email">Email address</label> -->
-<!--                                 <input type="email" class="form-control" id="email" placeholder="Enter email">                                                               -->
-<!--                               </div> -->
-<!--                               <button type="submit" class="btn btn-primary btn-block">Sign in</button> -->
-<%--                             </form>                                                        --%>
-<!-- 						</ul> -->
-<!-- 					</li> -->
-<!-- 				</ul> -->
-<!-- 			</li> -->
-<!-- 		</ul> -->
-		
-<!-- 	</div>/.nav-collapse -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
-
-
-
-
-
-
-<!-- </div> -->
-      
-<!--       		<div class="nav navbar-nav navbar-right"> -->
-<!-- 			<!--  		<button type="button" class="btn btn-info"> -->
-<!-- 			<!-- <a href="#"><span class="glyphicon glyphicon-search"></span></a> -->
-<!-- 			<!-- </button> -->
-<!-- 			<!-- <div class="row"> -->
-<!-- 			<!--         <div class="col-md-4 col-md-offset-3"> -->
-<%-- 			<%--             <form action="" class="search-form"> --%>
-<!-- 			<!--                 <div class="form-group has-feedback"> -->
-<!-- 			<!--             		<label for="search" class="sr-only">Search</label> -->
-<!-- 			<!--             		<input type="text" class="form-control" name="search" id="search" placeholder="search"> -->
-<!-- 			<!--               		<span class="glyphicon glyphicon-search form-control-feedback"></span> -->
-<!-- 			<!--             	</div> -->
-<%-- 			<%--             </form> --%> 
-<!-- 			<!--         </div> -->
-<!-- 			<!--     </div>  --> 
-
-<%-- <%-- 			<form id="demo-2"> --%> 
-<!-- <!-- 				<input type="search" placeholder="Search"> -->
-<%-- <%-- 			</form> --%> 
-<!-- 			<button type="button" class="btn btn-info"> -->
-<!-- 				<a href="#"><span class="glyphicon glyphicon-user"></span> Sign -->
-<!-- 					Up</a> -->
-<!-- 			</button> -->
-<!-- 			<button type="button" class="btn btn-info"> -->
-<!-- 				<a href="#"><span class="glyphicon glyphicon-log-in"></span> -->
-<!-- 					Login</a> -->
-<!-- 			</button> -->
-<!-- 		</div> -->

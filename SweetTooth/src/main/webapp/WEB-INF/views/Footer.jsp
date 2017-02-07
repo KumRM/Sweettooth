@@ -18,11 +18,10 @@
 				<p class="footer-links">
 
 					<a href="#">Home.</a>
-                    <a href="#">Blog.</a>
-					<a href="#">Prices.</a>
+					<a href="#">Products.</a>
+					<a href="#">Customers Speak.</a>
 					<a href="#">About Us.</a>
-					<a href="#">FAQs.</a>
-					<a href="#">Contact Us.</a>
+					<a href="#">Talk To Us.</a>
 				</p>
 
 				<p class="footer-company-name">SweetTooth, 2017.</p>
@@ -32,12 +31,12 @@
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>21 Revolution Street</span> Paris, France</p>
+					<p><span>Kalina, Santacruz-E</span> Mumbai, India</p>
 				</div>
 
 				<div>
 					<i class="fa fa-phone"></i>
-					<p>+1 555 123456</p>
+					<p>+91 9609396369</p>
 				</div>
 
 				<div>
